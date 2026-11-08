@@ -7,3 +7,4 @@ import RamanujanWeil.Ihara.FamilyPackage
 import RamanujanWeil.Ihara.FamilyConnected
 import RamanujanWeil.Ihara.CurveH1Weierstrass
 import RamanujanWeil.Ihara.SymSheaf
+import RamanujanWeil.Ihara.CurveH1Betti
