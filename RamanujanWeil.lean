@@ -15,3 +15,4 @@ import RamanujanWeil.Ihara.M4b
 import RamanujanWeil.Ihara.Final
 import RamanujanWeil.Arith.ArithA1Axioms
 import RamanujanWeil.Arith.SupersingularAxioms
+import RamanujanWeil.Ihara.FinalApprox

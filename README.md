@@ -31,6 +31,11 @@ The **only** remaining hypothesis is `IharaIdentity p`
 with `α, β` the roots of `X² − τ(p)X + p¹¹` (checked numerically, `scripts/scout/`). Proving it is
 the arithmetic half (Eichler–Selberg trace formula, class numbers, Deuring) and is not done.
 Axioms: `[propext, Classical.choice, Quot.sound]` (`RamanujanWeil/Ihara/FinalAxioms.lean`).
+Weaker sufficient hypothesis (`RamanujanWeil/Ihara/FinalApprox.lean`):
+`deligneBound_of_iharaApprox_all : (∀ (p : ℕ) [Fact p.Prime], IharaApprox p) → DeligneBound`, where
+`IharaApprox p` allows an error `O((n+1)^k·p^{19n/2})` in the identity. With it the supersingular
+tuples (`p ∣ a_c`) only need a size bound, proved in `Arith/SupersingularBound.lean`
+(`#{c : p ∣ a_c} ≤ p·q⁴`). Route for the remaining arithmetic: `docs/ARITH_ROUTE.md`.
 Milestone docs: `docs/IHARA_*.md`. Building the Ihara closure needs >6 GB for two Stacks modules
 (`ConstantCurveFrobeniusGram`, `Perfect.RelativeDescentAffineDictionary`).
 
