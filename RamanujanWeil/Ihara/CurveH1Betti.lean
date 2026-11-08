@@ -51,7 +51,7 @@ def H1RankFormula : Prop :=
   ∀ (B : BigEtaleSite.{u}) (X : B.Scheme) (ℓ : ℕ) [IsNoetherian X.1] [Fact ℓ.Prime]
     {k : Type u} [Field k] [Fintype k] (f : X.1 ⟶ Spec (.of k)) [IsProper f]
     (kbar : Type u) [Field kbar] [Algebra k kbar] (p q : ℕ) [Fact p.Prime] [CharP k p]
-    (_hcard : Fintype.card k = p ^ q) [IsAlgClosed kbar]
+    (_hcard : Fintype.card k = p ^ q) [IsAlgClosed kbar] [Algebra.IsAlgebraic k kbar]
     [IsCurve kbar (pullback.snd (Over.mk f).hom (specAlgebraMap k kbar))]
     [Smooth (pullback.snd (Over.mk f).hom (specAlgebraMap k kbar))]
     [IsProper (pullback.snd (Over.mk f).hom (specAlgebraMap k kbar))],
