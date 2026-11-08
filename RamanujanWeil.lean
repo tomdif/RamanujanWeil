@@ -18,3 +18,4 @@ import RamanujanWeil.Arith.SupersingularAxioms
 import RamanujanWeil.Ihara.FinalApprox
 import RamanujanWeil.Arith.TauHeckeAxioms
 import RamanujanWeil.Arith.HurwitzPrimeSquareAxioms
+import RamanujanWeil.Arith.ESAxioms
