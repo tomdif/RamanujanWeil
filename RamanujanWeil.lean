@@ -13,3 +13,4 @@ import RamanujanWeil.Ihara.PointsRealizes
 import RamanujanWeil.Ihara.CurveH1BettiStacks
 import RamanujanWeil.Ihara.M4b
 import RamanujanWeil.Ihara.Final
+import RamanujanWeil.Arith.ArithA1Axioms
