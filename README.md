@@ -36,6 +36,13 @@ Weaker sufficient hypothesis (`RamanujanWeil/Ihara/FinalApprox.lean`):
 `IharaApprox p` allows an error `O((n+1)^k·p^{19n/2})` in the identity. With it the supersingular
 tuples (`p ∣ a_c`) only need a size bound, proved in `Arith/SupersingularBound.lean`
 (`#{c : p ∣ a_c} ≤ p·q⁴`). Route for the remaining arithmetic: `docs/ARITH_ROUTE.md`.
+Current frontier (`RamanujanWeil/Ihara/FinalArith.lean`):
+`deligneBound_of_ES_Deuring : (∀ p [Fact p.Prime], EichlerSelbergPrimePow hurwitz p) →
+ (∀ p [Fact p.Prime], OrdinaryDeuring hurwitz p) → RamanujanTau.DeligneBound`.
+Proved inputs: Hurwitz class numbers and `H(p²N)` relation, Weierstrass orbit count, supersingular
+bound, Hasse for all tuples, τ Hecke recurrence (ported), the ordinary-sum error recursion. Open:
+Eichler–Selberg for `S₁₂` at prime powers (in progress, Popa–Zagier route, `docs/ARITH_ES_PLAN.md`)
+and Deuring–Waterhouse on the ordinary locus.
 Milestone docs: `docs/IHARA_*.md`. Building the Ihara closure needs >6 GB for two Stacks modules
 (`ConstantCurveFrobeniusGram`, `Perfect.RelativeDescentAffineDictionary`).
 
