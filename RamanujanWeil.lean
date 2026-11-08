@@ -11,3 +11,5 @@ import RamanujanWeil.Ihara.CurveH1Betti
 import RamanujanWeil.Ihara.Assembly
 import RamanujanWeil.Ihara.PointsRealizes
 import RamanujanWeil.Ihara.CurveH1BettiStacks
+import RamanujanWeil.Ihara.M4b
+import RamanujanWeil.Ihara.Final

@@ -16,5 +16,23 @@ conditional on the Eichler–Shimura–Deligne realization of `Δ` (`TauRealizat
 Axioms of every headline: `[propext, Classical.choice, Quot.sound]` (`RamanujanWeil/Axioms.lean`).
 No `sorry`, no `native_decide`, no new axioms. Details: [docs/WEIL_BRIDGE.md](docs/WEIL_BRIDGE.md).
 
+## Second route: Ihara–Birch (no realization hypothesis)
+
+`RamanujanWeil.Ihara.deligneBound_of_ihara_all :
+   (∀ (p : ℕ) [Fact p.Prime], IharaIdentity p) → RamanujanTau.DeligneBound`
+(per prime: `deligneBound_of_ihara_prime`). The geometric side is fully formalized: Weil II
+(Stacks) applied to `Sym¹⁰R¹f_!ℚ_ℓ` on the moduli of Weierstrass cubics over `𝔽_p`, proper base
+change to the fibres, `H¹` of each elliptic fibre (Stacks Tag 0C1Z), and the point bookkeeping.
+The **only** remaining hypothesis is `IharaIdentity p`
+(`RamanujanWeil/Ihara/IharaStatement.lean`), an elementary identity about finite fields:
+
+  Σ_{c ∈ 𝔽_{pⁿ}⁵, Δ(c) ≠ 0} symTrace₁₀(pⁿ + 1 − #E_c(𝔽_{pⁿ}), pⁿ) = p³ⁿ(pⁿ − 1)(−1 − αⁿ − βⁿ),
+
+with `α, β` the roots of `X² − τ(p)X + p¹¹` (checked numerically, `scripts/scout/`). Proving it is
+the arithmetic half (Eichler–Selberg trace formula, class numbers, Deuring) and is not done.
+Axioms: `[propext, Classical.choice, Quot.sound]` (`RamanujanWeil/Ihara/FinalAxioms.lean`).
+Milestone docs: `docs/IHARA_*.md`. Building the Ihara closure needs >6 GB for two Stacks modules
+(`ConstantCurveFrobeniusGram`, `Perfect.RelativeDescentAffineDictionary`).
+
 Build: `lake exe cache get && lake build RamanujanWeil RamanujanWeil.Axioms`. Stacks/Weil have no
 cache; the import closure is ~20k modules (≈20 h on a 14-core Mac, ~24 GB `.lake`).
