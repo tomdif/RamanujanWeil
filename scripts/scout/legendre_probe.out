@@ -1,0 +1,16 @@
+N=2 new dim 0
+N=3 new dim 1
+N=4 new dim 1
+level4 new eigenforms: 1
+level2 new eigenforms: 0
+g coeffs: [0, 1, 0, -516, 0, -10530, 0, 49304, 0, 89109, 0, -309420]
+fit from first 3 primes: [-3, -3, -1]~
+residual on all p<200: 1
+3 SL=-243 tau=252 a_g=-516
+5 SL=-3963 tau=4830 a_g=-10530
+7 SL=925 tau=-16744 a_g=49304
+11 SL=-1294419 tau=534612 a_g=-309420
+13 SL=3456805 tau=-577738 a_g=-1723594
+17 SL=22997301 tau=-6905934 a_g=-2279502
+19 SL=-36534707 tau=10661420 a_g=4550444
+23 SL=-48646947 tau=18643272 a_g=-7282872
