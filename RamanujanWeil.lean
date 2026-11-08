@@ -6,3 +6,4 @@ import RamanujanWeil.Ihara.WeilPackage
 import RamanujanWeil.Ihara.FamilyPackage
 import RamanujanWeil.Ihara.FamilyConnected
 import RamanujanWeil.Ihara.CurveH1Weierstrass
+import RamanujanWeil.Ihara.SymSheaf
