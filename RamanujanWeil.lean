@@ -8,3 +8,6 @@ import RamanujanWeil.Ihara.FamilyConnected
 import RamanujanWeil.Ihara.CurveH1Weierstrass
 import RamanujanWeil.Ihara.SymSheaf
 import RamanujanWeil.Ihara.CurveH1Betti
+import RamanujanWeil.Ihara.Assembly
+import RamanujanWeil.Ihara.PointsRealizes
+import RamanujanWeil.Ihara.CurveH1BettiStacks
