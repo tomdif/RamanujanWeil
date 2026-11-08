@@ -16,3 +16,4 @@ import RamanujanWeil.Ihara.Final
 import RamanujanWeil.Arith.ArithA1Axioms
 import RamanujanWeil.Arith.SupersingularAxioms
 import RamanujanWeil.Ihara.FinalApprox
+import RamanujanWeil.Arith.TauHeckeAxioms
