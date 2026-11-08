@@ -1,0 +1,19 @@
+name = "RamanujanWeil"
+version = "0.1.0"
+defaultTargets = ["RamanujanWeil"]
+
+[leanOptions]
+pp.unicode.fun = true
+autoImplicit = false
+relaxedAutoImplicit = false
+maxSynthPendingDepth = 3
+
+# AxiomMath/Weil (Deligne's theorem, Weil RH), pinned.
+[[require]]
+name = "Weil"
+git = "https://github.com/AxiomMath/Weil"
+rev = "27cdb2049be62ee2911429b47f54774078450e32"
+
+[[lean_lib]]
+name = "RamanujanWeil"
+roots = ["RamanujanWeil"]
