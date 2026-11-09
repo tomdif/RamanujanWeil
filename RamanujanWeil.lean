@@ -55,3 +55,9 @@ import RamanujanWeil.Arith.DeuringG1Frob
 import RamanujanWeil.Arith.DeuringG1Rigid
 import RamanujanWeil.Arith.DeuringG1Assembly
 import RamanujanWeil.Arith.DeuringG1Axioms3
+import RamanujanWeil.Arith.DeuringG7Dual2
+import RamanujanWeil.Arith.DeuringG8Alg
+import RamanujanWeil.Arith.DeuringG8End
+import RamanujanWeil.Arith.DeuringG8Lattice
+import RamanujanWeil.Arith.DeuringG8Frob
+import RamanujanWeil.Arith.DeuringG8Axioms
