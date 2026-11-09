@@ -35,3 +35,8 @@ import RamanujanWeil.Arith.DeuringG1Abel
 import RamanujanWeil.Arith.DeuringG1RR
 import RamanujanWeil.Arith.DeuringG1Point
 import RamanujanWeil.Arith.DeuringG1Axioms2
+import RamanujanWeil.Arith.DeuringG7Alg
+import RamanujanWeil.Arith.DeuringG7Prod
+import RamanujanWeil.Arith.DeuringG7Tate
+import RamanujanWeil.Arith.DeuringG7Bridge
+import RamanujanWeil.Arith.DeuringG7Axioms
