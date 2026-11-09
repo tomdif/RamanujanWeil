@@ -29,3 +29,4 @@ import RamanujanWeil.Arith.ESAxioms4
 import RamanujanWeil.Ihara.FinalESAxioms
 import RamanujanWeil.Arith.DeuringGAxioms2
 import RamanujanWeil.Arith.DeuringG1Axioms
+import RamanujanWeil.Arith.DeuringG6Axioms
