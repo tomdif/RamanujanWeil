@@ -25,3 +25,5 @@ import RamanujanWeil.Arith.DeuringAxioms
 import RamanujanWeil.Arith.ESAxioms2
 import RamanujanWeil.Arith.ESAxioms3
 import RamanujanWeil.Arith.DeuringGAxioms
+import RamanujanWeil.Arith.ESAxioms4
+import RamanujanWeil.Ihara.FinalESAxioms
