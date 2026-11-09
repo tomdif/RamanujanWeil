@@ -21,3 +21,4 @@ import RamanujanWeil.Arith.HurwitzPrimeSquareAxioms
 import RamanujanWeil.Arith.ESAxioms
 import RamanujanWeil.Arith.AssemblyAxioms
 import RamanujanWeil.Ihara.FinalArithAxioms
+import RamanujanWeil.Arith.DeuringAxioms
