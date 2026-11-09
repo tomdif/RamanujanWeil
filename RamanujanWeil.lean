@@ -24,3 +24,4 @@ import RamanujanWeil.Ihara.FinalArithAxioms
 import RamanujanWeil.Arith.DeuringAxioms
 import RamanujanWeil.Arith.ESAxioms2
 import RamanujanWeil.Arith.ESAxioms3
+import RamanujanWeil.Arith.DeuringGAxioms
