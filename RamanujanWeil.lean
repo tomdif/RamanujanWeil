@@ -46,3 +46,8 @@ import RamanujanWeil.Arith.DeuringApprox
 import RamanujanWeil.Arith.DeuringApproxMult
 import RamanujanWeil.Ihara.FinalDeuringApprox
 import RamanujanWeil.Arith.DeuringApproxAxioms
+import RamanujanWeil.Arith.DeuringMultDef
+import RamanujanWeil.Arith.DeuringMultCount
+import RamanujanWeil.Arith.DeuringG7Dual
+import RamanujanWeil.Ihara.FinalDeuringTate
+import RamanujanWeil.Arith.DeuringMultAxioms

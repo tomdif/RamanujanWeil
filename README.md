@@ -46,8 +46,11 @@ Exact Deuring is no longer needed (`RamanujanWeil/Ihara/FinalDeuringApprox.lean`
 `docs/ARITH_DEURING_APPROX.md`): `deligneBound_of_DeuringMult_unique` needs only a per-class count
 `DeuringMultiplicity` (`N(t) = q³(q−1)·m(t)·H(4q−t²)/2`) plus `m(t) ≤ 1` (Tate uniqueness); the
 `_exists` variant takes `m(t) ≥ 1` instead. Kronecker–Hurwitz is proved (`Arith/DeuringApproxKH.lean`).
-Open: the per-class lattice count (G1 Jacobian/Abel done, G6 quotients done) and Tate uniqueness
-(G7: proved modulo the named finiteness hypothesis `QuotientFiniteness`; `docs/ARITH_DEURING_G7.md`).
+With `mult` = number of isogeny classes (`Arith/DeuringMultDef.lean`), `mult ≤ 1` is proved from Tate:
+`deligneBound_of_classLattice_tate (hfin : TateFinitenessAll) (hL : ∀ p, DeuringClassLatticeAll p)`
+(`Ihara/FinalDeuringTate.lean`, `docs/ARITH_DEURING_MULT.md`). Open: `TateFinitenessAll` (finiteness of
+𝔽_q-forms of abelian surfaces, `docs/ARITH_DEURING_G7.md`) and the per-class lattice `DeuringClassLatticeAll`
+(G8/G5; G1 Jacobian/Abel and G6 quotients done).
 Milestone docs: `docs/IHARA_*.md`. Building the Ihara closure needs >6 GB for two Stacks modules
 (`ConstantCurveFrobeniusGram`, `Perfect.RelativeDescentAffineDictionary`).
 
