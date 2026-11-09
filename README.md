@@ -42,9 +42,12 @@ Current frontier (`RamanujanWeil/Ihara/FinalES.lean`):
 (`Arith/ESAnalytic.lean`, `eichlerSelberg_all`; Popa–Zagier route, Eichler integral + Bol + a
 certified numerical non-vanishing of Δ's period polynomial). Also proved: Hurwitz class numbers and
 `H(p²N)`, Weierstrass orbit count, supersingular bound, Hasse for all tuples, τ Hecke recurrence.
-Open: Deuring–Waterhouse on the ordinary locus (`OrdinaryDeuring`), reduced to the geometric
-interface `DeuringLattice` (`Arith/DeuringAssembly.lean`; plan `docs/ARITH_DEURING_PLAN.md`,
-long pole = Tate's isogeny theorem).
+Exact Deuring is no longer needed (`RamanujanWeil/Ihara/FinalDeuringApprox.lean`,
+`docs/ARITH_DEURING_APPROX.md`): `deligneBound_of_DeuringMult_unique` needs only a per-class count
+`DeuringMultiplicity` (`N(t) = q³(q−1)·m(t)·H(4q−t²)/2`) plus `m(t) ≤ 1` (Tate uniqueness); the
+`_exists` variant takes `m(t) ≥ 1` instead. Kronecker–Hurwitz is proved (`Arith/DeuringApproxKH.lean`).
+Open: the per-class lattice count (G1 Jacobian/Abel done, G6 quotients done) and Tate uniqueness
+(G7: proved modulo the named finiteness hypothesis `QuotientFiniteness`; `docs/ARITH_DEURING_G7.md`).
 Milestone docs: `docs/IHARA_*.md`. Building the Ihara closure needs >6 GB for two Stacks modules
 (`ConstantCurveFrobeniusGram`, `Perfect.RelativeDescentAffineDictionary`).
 
