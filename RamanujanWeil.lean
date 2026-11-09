@@ -30,3 +30,8 @@ import RamanujanWeil.Ihara.FinalESAxioms
 import RamanujanWeil.Arith.DeuringGAxioms2
 import RamanujanWeil.Arith.DeuringG1Axioms
 import RamanujanWeil.Arith.DeuringG6Axioms
+import RamanujanWeil.Arith.DeuringG1Jac
+import RamanujanWeil.Arith.DeuringG1Abel
+import RamanujanWeil.Arith.DeuringG1RR
+import RamanujanWeil.Arith.DeuringG1Point
+import RamanujanWeil.Arith.DeuringG1Axioms2
