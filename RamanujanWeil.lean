@@ -51,3 +51,7 @@ import RamanujanWeil.Arith.DeuringMultCount
 import RamanujanWeil.Arith.DeuringG7Dual
 import RamanujanWeil.Ihara.FinalDeuringTate
 import RamanujanWeil.Arith.DeuringMultAxioms
+import RamanujanWeil.Arith.DeuringG1Frob
+import RamanujanWeil.Arith.DeuringG1Rigid
+import RamanujanWeil.Arith.DeuringG1Assembly
+import RamanujanWeil.Arith.DeuringG1Axioms3
