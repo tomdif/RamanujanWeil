@@ -40,3 +40,9 @@ import RamanujanWeil.Arith.DeuringG7Prod
 import RamanujanWeil.Arith.DeuringG7Tate
 import RamanujanWeil.Arith.DeuringG7Bridge
 import RamanujanWeil.Arith.DeuringG7Axioms
+import RamanujanWeil.Arith.DeuringApproxKH
+import RamanujanWeil.Arith.DeuringApproxCount
+import RamanujanWeil.Arith.DeuringApprox
+import RamanujanWeil.Arith.DeuringApproxMult
+import RamanujanWeil.Ihara.FinalDeuringApprox
+import RamanujanWeil.Arith.DeuringApproxAxioms
