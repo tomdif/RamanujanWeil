@@ -1,5 +1,8 @@
 # A3-ord: ordinary Deuring–Waterhouse, blueprint and status
 
+> **Status 2026-11-09:** superseded in part. Exact Deuring is no longer needed (docs/ARITH_DEURING_APPROX.md); the current frontier and open named Props (`TateFinitenessPolAll`, `RadicialDual`, `DeuringClassLatticeAll`) are listed in README.md. Progress: ARITH_DEURING_G1*, G5, G6, G7, G7FIN, G8, MULT.
+
+
 Target (frozen, `RamanujanWeil/Arith/AssemblyVocab.lean`): `OrdinaryDeuring hurwitz p` for every
 prime `p`, i.e. for `q = pⁿ`, `n ≥ 1`, `p ∤ t`:
 

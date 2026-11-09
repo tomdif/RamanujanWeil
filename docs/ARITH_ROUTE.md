@@ -1,5 +1,8 @@
 # Arithmetic route to `IharaIdentity`: decision memo
 
+> **Status 2026-11-09:** superseded in part. Exact Deuring is no longer needed (docs/ARITH_DEURING_APPROX.md); the current frontier and open named Props (`TateFinitenessPolAll`, `RadicialDual`, `DeuringClassLatticeAll`) are listed in README.md. Progress: ARITH_DEURING_G1*, G5, G6, G7, G7FIN, G8, MULT.
+
+
 Status 2026-11-08. This is a scouting memo. Nothing here is formalized. The interfaces below were
 typechecked with `sorry` in a scratch file outside the repo
 (`ArithInterfaces.lean`: 0 errors, 8 `sorry`, one niced `lake env lean`, about 9 s). The numerical

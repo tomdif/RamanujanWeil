@@ -29,7 +29,9 @@ The **only** remaining hypothesis is `IharaIdentity p`
   Σ_{c ∈ 𝔽_{pⁿ}⁵, Δ(c) ≠ 0} symTrace₁₀(pⁿ + 1 − #E_c(𝔽_{pⁿ}), pⁿ) = p³ⁿ(pⁿ − 1)(−1 − αⁿ − βⁿ),
 
 with `α, β` the roots of `X² − τ(p)X + p¹¹` (checked numerically, `scripts/scout/`). Proving it is
-the arithmetic half (Eichler–Selberg trace formula, class numbers, Deuring) and is not done.
+the arithmetic half (Eichler–Selberg trace formula, class numbers, Deuring); its current state is
+below: Eichler–Selberg and Kronecker–Hurwitz are proved, and Deuring is reduced to the named Props listed
+at the end of this section.
 Axioms: `[propext, Classical.choice, Quot.sound]` (`RamanujanWeil/Ihara/FinalAxioms.lean`).
 Weaker sufficient hypothesis (`RamanujanWeil/Ihara/FinalApprox.lean`):
 `deligneBound_of_iharaApprox_all : (∀ (p : ℕ) [Fact p.Prime], IharaApprox p) → DeligneBound`, where
@@ -48,9 +50,21 @@ Exact Deuring is no longer needed (`RamanujanWeil/Ihara/FinalDeuringApprox.lean`
 `_exists` variant takes `m(t) ≥ 1` instead. Kronecker–Hurwitz is proved (`Arith/DeuringApproxKH.lean`).
 With `mult` = number of isogeny classes (`Arith/DeuringMultDef.lean`), `mult ≤ 1` is proved from Tate:
 `deligneBound_of_classLattice_tate (hfin : TateFinitenessAll) (hL : ∀ p, DeuringClassLatticeAll p)`
-(`Ihara/FinalDeuringTate.lean`, `docs/ARITH_DEURING_MULT.md`). Open: `TateFinitenessAll` (finiteness of
-𝔽_q-forms of abelian surfaces, `docs/ARITH_DEURING_G7.md`) and the per-class lattice `DeuringClassLatticeAll`
-(G8/G5; G1 Jacobian/Abel and G6 quotients done).
+(`Ihara/FinalDeuringTate.lean`, `docs/ARITH_DEURING_MULT.md`).
+
+Deuring status (all axiom-clean, standard three axioms):
+- **Done:** G1 (concrete Jacobian of `W`, Abel map an isomorphism in genus 1, Frobenius compatibility,
+  rigidity, `FrobIso ≃` equivariant Jacobian isos; `docs/ARITH_DEURING_G1*.md`); G6 (quotients of
+  abelian varieties by finite subgroups); G7 (Tate's gluing; `docs/ARITH_DEURING_G7.md`); G8 (dual
+  isogenies up to the inseparable part, `End_π ⊗ ℚ = ℚ(π)`, `Hom_π(A₀,A)` free of rank 2 with trace `t`,
+  det `q`, the lattice field `Λ`; `docs/ARITH_DEURING_G8.md`).
+- **Finiteness weakened:** `mult ≤ 1` now follows from `TateFinitenessPolAll` (principally polarized
+  graph quotients only, strictly weaker than `TateFinitenessAll`; `docs/ARITH_DEURING_G7FIN.md`,
+  `mult_le_one_pol`). Remaining route F2′: Weil pairing, descent of the polarization, theta divisor =
+  genus-2 curve, genus-2 finiteness (15–25k lines).
+- **Open named Props:** `TateFinitenessPolAll`; `RadicialDual` (purely inseparable dual isogeny,
+  0.8–1.3k); `DeuringClassLatticeAll` fields `rel_iff`/`card_stab` (G8(ii) integral surjectivity) and
+  `surj_class` (G5, `docs/ARITH_DEURING_G5.md`).
 Milestone docs: `docs/IHARA_*.md`. Building the Ihara closure needs >6 GB for two Stacks modules
 (`ConstantCurveFrobeniusGram`, `Perfect.RelativeDescentAffineDictionary`).
 
