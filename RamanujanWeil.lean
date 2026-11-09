@@ -61,3 +61,7 @@ import RamanujanWeil.Arith.DeuringG8End
 import RamanujanWeil.Arith.DeuringG8Lattice
 import RamanujanWeil.Arith.DeuringG8Frob
 import RamanujanWeil.Arith.DeuringG8Axioms
+import RamanujanWeil.Arith.DeuringG7FinAlg
+import RamanujanWeil.Arith.DeuringG7FinCore
+import RamanujanWeil.Arith.DeuringG7FinProd
+import RamanujanWeil.Arith.DeuringG7FinAxioms
