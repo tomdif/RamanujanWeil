@@ -65,3 +65,8 @@ import RamanujanWeil.Arith.DeuringG7FinAlg
 import RamanujanWeil.Arith.DeuringG7FinCore
 import RamanujanWeil.Arith.DeuringG7FinProd
 import RamanujanWeil.Arith.DeuringG7FinAxioms
+import RamanujanWeil.Arith.DeuringG7WeilAlg
+import RamanujanWeil.Arith.DeuringG7WeilHeis
+import RamanujanWeil.Arith.DeuringG7WeilCore
+import RamanujanWeil.Arith.DeuringG7Genus2Model
+import RamanujanWeil.Arith.DeuringG7WCAxioms

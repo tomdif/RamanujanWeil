@@ -61,7 +61,10 @@ Deuring status (all axiom-clean, standard three axioms):
 - **Finiteness weakened:** `mult ≤ 1` now follows from `TateFinitenessPolAll` (principally polarized
   graph quotients only, strictly weaker than `TateFinitenessAll`; `docs/ARITH_DEURING_G7FIN.md`,
   `mult_le_one_pol`). Remaining route F2′: Weil pairing, descent of the polarization, theta divisor =
-  genus-2 curve, genus-2 finiteness (15–25k lines).
+  genus-2 curve, genus-2 finiteness (15–25k lines). Steps W and C are partly done
+  (`docs/ARITH_DEURING_G7_WC.md`): alternating pairings, anti-isometric gluings ⇒ Lagrangian graphs,
+  the theta-group → Weil-pairing bridge, and finiteness of genus-2 curves over 𝔽_q modulo the named
+  `Genus2ModelExistence` (Riemann–Roch / canonical map).
 - **Open named Props:** `TateFinitenessPolAll`; `RadicialDual` (purely inseparable dual isogeny,
   0.8–1.3k); `DeuringClassLatticeAll` fields `rel_iff`/`card_stab` (G8(ii) integral surjectivity) and
   `surj_class` (G5, `docs/ARITH_DEURING_G5.md`).
