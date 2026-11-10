@@ -67,8 +67,10 @@ Deuring status (all axiom-clean, standard three axioms):
   `Genus2ModelExistence` (Riemann–Roch / canonical map).
 - **Open named Props:** `TateFinitenessPolAll`; `RadicialDual` is **proved** (`radicialDual`, so `FrobHomDual` holds unconditionally;
   `docs/ARITH_DEURING_RADICIAL.md`); `DeuringClassLatticeAll` fields `rel_iff`/`card_stab` (G8(ii) integral surjectivity) and
-  `surj_class` (G5, `docs/ARITH_DEURING_G5.md`: reduced to the named `WeierstrassDescent` (quotient
-  → Weierstrass model over 𝔽_q, 2–3.5k) plus a minimal-order base curve; cyclic torsion proved).
+  `surj_class` (G5, `docs/ARITH_DEURING_G5.md`: reduced to `WeierstrassDescent`, which is now proved
+  from the smaller named `WeierstrassModel K̄` (a 1-dim abelian variety over K̄ has a Weierstrass model;
+  `docs/ARITH_DEURING_DESCENT.md`: rigidity, Lang descent, coordinate composition all proved), plus a
+  minimal-order base curve; cyclic torsion proved).
 Milestone docs: `docs/IHARA_*.md`. Building the Ihara closure needs >6 GB for two Stacks modules
 (`ConstantCurveFrobeniusGram`, `Perfect.RelativeDescentAffineDictionary`).
 

@@ -79,3 +79,9 @@ import RamanujanWeil.Arith.DeuringRadicialGen
 import RamanujanWeil.Arith.DeuringRadicialFrob
 import RamanujanWeil.Arith.DeuringRadicialDual
 import RamanujanWeil.Arith.DeuringRadicialAxioms
+import RamanujanWeil.Arith.DeuringDescentRigid
+import RamanujanWeil.Arith.DeuringDescentTwist
+import RamanujanWeil.Arith.DeuringDescentLang
+import RamanujanWeil.Arith.DeuringDescentCoord
+import RamanujanWeil.Arith.DeuringDescent
+import RamanujanWeil.Arith.DeuringDescentAxioms
