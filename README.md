@@ -93,7 +93,9 @@ C-Jac is proved (`exists_equivariant_jacobianIso`, `docs/ARITH_DEURING_G7_CJAC.m
 constructed from the function field (`docs/ARITH_DEURING_G7DGEOM.md`), and the seam is split as
 `deligneBound_of_split : DGeomGapsAll → ThetaLevelDescent → PrincipalFiniteness → DeligneBound`, with
 `DGeomGaps` = RR-stabilizer bridge (**proved** for N ≥ 2, `rrStabilizerBridge`, `docs/ARITH_DEURING_G7DGAPS.md`)
-+ `ThetaHeisenberg` (Weil pairing nondegenerate) + `AbelJacobiMathlib` (Mathlib/Jacobian group-law agreement), `ThetaLevelDescent` = module descent along the G6 quotient, `PrincipalFiniteness` = Θ + J + C-descent, itself reduced
++ `ThetaHeisenberg` (Weil pairing nondegenerate) + `AbelJacobiMathlib` (Mathlib/Jacobian group-law agreement), `ThetaLevelDescent` = module descent along the G6 quotient (h⁰ = 1 of the descended bundle **proved** from
+the theta-group representation on L(N·O) ⊗ L(N·O)′, `docs/ARITH_DEURING_G7_LEVELDESCENT.md`; reduced to
+`LevelSectionDescent` + `GlueAmpleDescent` at odd primes ℓ invertible in k, via `deligneBound_of_levelDescent`), `PrincipalFiniteness` = Θ + J + C-descent, itself reduced
 (`docs/ARITH_DEURING_G7_PRINCIPAL.md`, `principalFiniteness_of_thetaJacobianModel`) to `ThetaJacobianModel`
 (Θ + J, ≈ 6–9.5k) and `Genus2FrobDescent` (Lang's theorem for hyperelliptic model changes proved, `docs/ARITH_DEURING_G7_G2DESCENT.md`;
 reduced to `Genus2FrobCanonical` + `Genus2FixedDescent`), consuming the proved C and C-Jac; the product case is
