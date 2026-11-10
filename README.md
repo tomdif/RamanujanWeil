@@ -89,7 +89,8 @@ theorem deligneBound_of_ordinaryTraceExistence (h : OrdinaryTraceExistence) : Ra
 `MultLeOneAll` follows from `TateFinitenessPolAll` (`multLeOneAll_of_tatePol`) and from the sharper
 `ThetaDescentFinitenessAll` (`G7D.deligneBound_of_thetaDescent`, `docs/ARITH_DEURING_G7D.md`): the group-theoretic
 half of step D (Mumford's level-subgroup criterion for graph quotients, principal descended polarization) is proved;
-D-geom (theta group of 𝒪(N[0]), descent of modules), Θ, J and C-Jac remain (≈ 10–18k lines). `OrdinaryTraceExistence` is equivalent to Deuring's
+C-Jac is proved (`exists_equivariant_jacobianIso`, `docs/ARITH_DEURING_G7_CJAC.md`); D-geom (theta group of
+𝒪(N[0]), descent of modules), Θ and J remain (≈ 9–17k lines). `OrdinaryTraceExistence` is equivalent to Deuring's
 reduction theorem for CM curves (≈ 20k+ lines). `PrimeToPLinkAll` is proved (`PLink.primeToPLinkAll`,
 `docs/ARITH_DEURING_PLINK.md`). Earlier forms `deligneBound_of_tatePol` and `deligneBound_of_tatePol_link` remain.
 Milestone docs: `docs/IHARA_*.md`. Building the Ihara closure needs >6 GB for two Stacks modules

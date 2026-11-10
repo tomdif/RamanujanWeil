@@ -123,3 +123,8 @@ import RamanujanWeil.Arith.DeuringG7DAlg
 import RamanujanWeil.Arith.DeuringG7DCore
 import RamanujanWeil.Arith.DeuringG7DFinal
 import RamanujanWeil.Arith.DeuringG7DAxioms
+import RamanujanWeil.Arith.DeuringG7CJac
+import RamanujanWeil.Arith.DeuringG7CJacPic0
+import RamanujanWeil.Arith.DeuringG7CJacIso
+import RamanujanWeil.Arith.DeuringG7CJacBase
+import RamanujanWeil.Arith.DeuringG7CJacAxioms
