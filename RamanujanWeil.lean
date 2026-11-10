@@ -70,3 +70,8 @@ import RamanujanWeil.Arith.DeuringG7WeilHeis
 import RamanujanWeil.Arith.DeuringG7WeilCore
 import RamanujanWeil.Arith.DeuringG7Genus2Model
 import RamanujanWeil.Arith.DeuringG7WCAxioms
+import RamanujanWeil.Arith.DeuringG5Alg
+import RamanujanWeil.Arith.DeuringG5Kernel
+import RamanujanWeil.Arith.DeuringG5Cyclic
+import RamanujanWeil.Arith.DeuringG5Surj
+import RamanujanWeil.Arith.DeuringG5Axioms
