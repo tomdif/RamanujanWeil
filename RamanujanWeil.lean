@@ -143,3 +143,6 @@ import RamanujanWeil.Arith.DeuringG7DGapsTransl
 import RamanujanWeil.Arith.DeuringG7DGapsBridge
 import RamanujanWeil.Arith.DeuringG7DGapsAll
 import RamanujanWeil.Arith.DeuringG7DGapsAxioms
+import RamanujanWeil.Arith.DeuringG7Genus2DescentLang
+import RamanujanWeil.Arith.DeuringG7Genus2Descent
+import RamanujanWeil.Arith.DeuringG7Genus2DescentAxioms

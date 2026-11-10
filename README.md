@@ -95,7 +95,8 @@ constructed from the function field (`docs/ARITH_DEURING_G7DGEOM.md`), and the s
 `DGeomGaps` = RR-stabilizer bridge (**proved** for N ≥ 2, `rrStabilizerBridge`, `docs/ARITH_DEURING_G7DGAPS.md`)
 + `ThetaHeisenberg` (Weil pairing nondegenerate) + `AbelJacobiMathlib` (Mathlib/Jacobian group-law agreement), `ThetaLevelDescent` = module descent along the G6 quotient, `PrincipalFiniteness` = Θ + J + C-descent, itself reduced
 (`docs/ARITH_DEURING_G7_PRINCIPAL.md`, `principalFiniteness_of_thetaJacobianModel`) to `ThetaJacobianModel`
-(Θ + J, ≈ 6–9.5k) and `Genus2FrobDescent` (≈ 0.6–1.2k), consuming the proved C and C-Jac; the product case is
+(Θ + J, ≈ 6–9.5k) and `Genus2FrobDescent` (Lang's theorem for hyperelliptic model changes proved, `docs/ARITH_DEURING_G7_G2DESCENT.md`;
+reduced to `Genus2FrobCanonical` + `Genus2FixedDescent`), consuming the proved C and C-Jac; the product case is
 handled by a pigeonhole over pairs of Weierstrass curves. `OrdinaryTraceExistence` is equivalent to Deuring's
 reduction theorem for CM curves (≈ 20k+ lines). `PrimeToPLinkAll` is proved (`PLink.primeToPLinkAll`,
 `docs/ARITH_DEURING_PLINK.md`). Earlier forms `deligneBound_of_tatePol` and `deligneBound_of_tatePol_link` remain.
