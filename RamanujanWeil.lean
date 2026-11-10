@@ -119,3 +119,7 @@ import RamanujanWeil.Arith.DeuringG7Genus2PencilChart
 import RamanujanWeil.Arith.DeuringG7Genus2PencilGeom
 import RamanujanWeil.Arith.DeuringG7Genus2Pencil
 import RamanujanWeil.Arith.DeuringG7Genus2PencilAxioms
+import RamanujanWeil.Arith.DeuringG7DAlg
+import RamanujanWeil.Arith.DeuringG7DCore
+import RamanujanWeil.Arith.DeuringG7DFinal
+import RamanujanWeil.Arith.DeuringG7DAxioms
