@@ -93,7 +93,10 @@ C-Jac is proved (`exists_equivariant_jacobianIso`, `docs/ARITH_DEURING_G7_CJAC.m
 constructed from the function field (`docs/ARITH_DEURING_G7DGEOM.md`), and the seam is split as
 `deligneBound_of_split : DGeomGapsAll → ThetaLevelDescent → PrincipalFiniteness → DeligneBound`, with
 `DGeomGaps` = RR-stabilizer bridge + Heisenberg (Weil pairing nondegenerate) + Mathlib/Jacobian group-law
-agreement, `ThetaLevelDescent` = module descent along the G6 quotient, `PrincipalFiniteness` = Θ + J + C-descent. `OrdinaryTraceExistence` is equivalent to Deuring's
+agreement, `ThetaLevelDescent` = module descent along the G6 quotient, `PrincipalFiniteness` = Θ + J + C-descent, itself reduced
+(`docs/ARITH_DEURING_G7_PRINCIPAL.md`, `principalFiniteness_of_thetaJacobianModel`) to `ThetaJacobianModel`
+(Θ + J, ≈ 6–9.5k) and `Genus2FrobDescent` (≈ 0.6–1.2k), consuming the proved C and C-Jac; the product case is
+handled by a pigeonhole over pairs of Weierstrass curves. `OrdinaryTraceExistence` is equivalent to Deuring's
 reduction theorem for CM curves (≈ 20k+ lines). `PrimeToPLinkAll` is proved (`PLink.primeToPLinkAll`,
 `docs/ARITH_DEURING_PLINK.md`). Earlier forms `deligneBound_of_tatePol` and `deligneBound_of_tatePol_link` remain.
 Milestone docs: `docs/IHARA_*.md`. Building the Ihara closure needs >6 GB for two Stacks modules

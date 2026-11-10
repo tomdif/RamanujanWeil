@@ -133,3 +133,7 @@ import RamanujanWeil.Arith.DeuringG7DGeomTheta
 import RamanujanWeil.Arith.DeuringG7DGeomKer
 import RamanujanWeil.Arith.DeuringG7DGeomFamily
 import RamanujanWeil.Arith.DeuringG7DGeomAxioms
+import RamanujanWeil.Arith.DeuringG7ThetaSwap
+import RamanujanWeil.Arith.DeuringG7PrincipalFinModel
+import RamanujanWeil.Arith.DeuringG7PrincipalFin
+import RamanujanWeil.Arith.DeuringG7PrincipalFinAxioms
