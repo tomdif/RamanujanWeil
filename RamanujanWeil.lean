@@ -75,3 +75,7 @@ import RamanujanWeil.Arith.DeuringG5Kernel
 import RamanujanWeil.Arith.DeuringG5Cyclic
 import RamanujanWeil.Arith.DeuringG5Surj
 import RamanujanWeil.Arith.DeuringG5Axioms
+import RamanujanWeil.Arith.DeuringRadicialGen
+import RamanujanWeil.Arith.DeuringRadicialFrob
+import RamanujanWeil.Arith.DeuringRadicialDual
+import RamanujanWeil.Arith.DeuringRadicialAxioms

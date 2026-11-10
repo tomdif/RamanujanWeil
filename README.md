@@ -65,8 +65,8 @@ Deuring status (all axiom-clean, standard three axioms):
   (`docs/ARITH_DEURING_G7_WC.md`): alternating pairings, anti-isometric gluings ⇒ Lagrangian graphs,
   the theta-group → Weil-pairing bridge, and finiteness of genus-2 curves over 𝔽_q modulo the named
   `Genus2ModelExistence` (Riemann–Roch / canonical map).
-- **Open named Props:** `TateFinitenessPolAll`; `RadicialDual` (purely inseparable dual isogeny,
-  0.8–1.3k); `DeuringClassLatticeAll` fields `rel_iff`/`card_stab` (G8(ii) integral surjectivity) and
+- **Open named Props:** `TateFinitenessPolAll`; `RadicialDual` is **proved** (`radicialDual`, so `FrobHomDual` holds unconditionally;
+  `docs/ARITH_DEURING_RADICIAL.md`); `DeuringClassLatticeAll` fields `rel_iff`/`card_stab` (G8(ii) integral surjectivity) and
   `surj_class` (G5, `docs/ARITH_DEURING_G5.md`: reduced to the named `WeierstrassDescent` (quotient
   → Weierstrass model over 𝔽_q, 2–3.5k) plus a minimal-order base curve; cyclic torsion proved).
 Milestone docs: `docs/IHARA_*.md`. Building the Ihara closure needs >6 GB for two Stacks modules
