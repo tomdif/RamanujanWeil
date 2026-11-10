@@ -66,7 +66,7 @@ Deuring status (all axiom-clean, standard three axioms):
   the theta-group → Weil-pairing bridge, and finiteness of genus-2 curves over 𝔽_q modulo the named
   `Genus2ModelExistence`, itself reduced (`docs/ARITH_DEURING_G7_GENUS2.md`) to `Genus2CanonicalExistence`
   (**proved**: ω is invertible of degree 2 with h⁰ = 2, via Gorenstein duality) and `Genus2PencilFunctionField`
-  (pencil → function-field data, open); the function-field algebra and h⁰(L^⊗n) = 2n−1 are proved.
+  (**proved**, `Pencil.genus2PencilFunctionField`), so `Genus2ModelExistence` is proved and step C is complete.
 - **Also proved:** `RadicialDual` (`radicialDual`, so `FrobHomDual` holds unconditionally;
   `docs/ARITH_DEURING_RADICIAL.md`); G8(ii) integral surjectivity, `rel_iff`, `card_stab`
   (`docs/ARITH_DEURING_CLASSLATTICE.md`); `surj_class` (G5, `docs/ARITH_DEURING_G5.md`) via
@@ -86,8 +86,8 @@ theorem deligneBound_of_multLeOne (h : MultLeOneAll) : RamanujanTau.DeligneBound
 theorem deligneBound_of_ordinaryTraceExistence (h : OrdinaryTraceExistence) : RamanujanTau.DeligneBound
 ```
 
-`MultLeOneAll` follows from `TateFinitenessPolAll` (`multLeOneAll_of_tatePol`; route F2′ above, steps D, Θ, J,
-C-Jac and `Genus2PencilFunctionField` remain, ≈ 11–19k lines). `OrdinaryTraceExistence` is equivalent to Deuring's
+`MultLeOneAll` follows from `TateFinitenessPolAll` (`multLeOneAll_of_tatePol`; route F2′ above, steps D, Θ, J and
+C-Jac remain, ≈ 11–19k lines). `OrdinaryTraceExistence` is equivalent to Deuring's
 reduction theorem for CM curves (≈ 20k+ lines). `PrimeToPLinkAll` is proved (`PLink.primeToPLinkAll`,
 `docs/ARITH_DEURING_PLINK.md`). Earlier forms `deligneBound_of_tatePol` and `deligneBound_of_tatePol_link` remain.
 Milestone docs: `docs/IHARA_*.md`. Building the Ihara closure needs >6 GB for two Stacks modules

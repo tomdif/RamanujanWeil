@@ -1,4 +1,4 @@
-# A3-ord, G7-C: `Genus2ModelExistence`, reduced to two named Props, then to one (2026-11-10; see §6)
+# A3-ord, G7-C: `Genus2ModelExistence`, PROVED (2026-11-10; see §6, §7)
 
 This continues `ARITH_DEURING_G7_WC.md` §2/§3 (step **C** of route F2′, `ARITH_DEURING_G7FIN.md`).
 Target: `Genus2ModelExistence K` (`Arith/DeuringG7Genus2Model.lean`). Every smooth proper
@@ -232,3 +232,60 @@ Sub-steps (a)–(c) of §4.2 are open. `PencilDegree` is now built. Notes for th
   * Pole-side remark: `V₃ ∩ K(x)` is the cubic span whenever some `y ∈ V₃ ∖ K(x)` exists, by a
     dimension count. So (c) could be replaced by the single condition `V₃ ⊄ K(x)`, but that is not
     obviously easier to prove geometrically.
+
+## 7. Update: `Genus2PencilFunctionField` PROVED, hence `Genus2ModelExistence` (2026-11-10)
+
+```lean
+theorem Pencil.genus2PencilFunctionField : Genus2PencilFunctionField K   -- every field K
+theorem Pencil.genus2ModelExistence : Genus2ModelExistence K             -- every field K
+```
+
+No named Prop remains on step C. No existing file was edited. There is no `sorry`, `admit`,
+`native_decide` or `axiom`. Audit: `RamanujanWeil/Arith/DeuringG7Genus2PencilAxioms.lean`;
+everything depends only on `[propext, Classical.choice, Quot.sound]`.
+
+| File | Content |
+|---|---|
+| `Arith/DeuringG7Genus2PencilAlg.lean` | Mathlib only: `GradedPencil` and `toIntegralPencilData` |
+| `Arith/DeuringG7Genus2PencilChart.lean` | sections of an invertible module on two charts, read in `K(Y)` |
+| `Arith/DeuringG7Genus2PencilGeom.lean` | the graded pencil of a base-point-free pencil on a curve |
+| `Arith/DeuringG7Genus2Pencil.lean` | base-point removal, the degree of `L'`, assembly |
+| `Arith/DeuringG7Genus2PencilAxioms.lean` | audit |
+
+**The route.** It avoids Tag 0CCR and the finiteness of `φ : Y → ℙ¹`, which §4.2 and §6.1
+planned to use. Base-point freeness carries the whole argument.
+
+* **Algebra (`GradedPencil`).** Take `x ≠ 0` and `V n ⊆ F`, with `1 ∈ V 0`, `1, x ∈ V 1`,
+  `V a V b ⊆ V (a+b)` and each `V n` finite dimensional. Assume base-point freeness:
+  `f, x f ∈ V (n+1) ⇒ f ∈ V n` for `n ≥ 1`. Assume `dim V n = a n − 1` for `n ≥ n₀`.
+  * **Surjectivity (`le_sup_map`).** `V (m+2) = V (m+1) + x V (m+1)`. The two summands meet
+    inside `x V m`, so a dimension count gives equality.
+  * **Integrality.** `⋃ V n` is the `K[x]`-span of a single `V B`, so it is finitely
+    generated. Every element is therefore integral over `K[x]`
+    (`isIntegral_of_smul_mem_submodule`).
+  * **`x` is transcendental.** Otherwise `⋃ V n` would be finite dimensional.
+  * **`a ≥ 2`.** `1, …, xⁿ ∈ V n`.
+  * **`[F : K(x)] ≤ a`.** Assume every `f` is `p/q` with `p, q` in one `V m`. Clear
+    denominators, then count `x^j Q v`.
+  * **Dual pencil (`inv`).** `x⁻¹` with `x⁻ⁿ V n` satisfies the same axioms. This gives
+    integrality over `K[x⁻¹]`.
+* **Two charts (`Chart.Data`).** Let `M` be invertible on an integral `Y`, and let `G_a, G_b` be
+  sections that are nowhere zero on a cover `U_a, U_b`. Then `θ T = (T/G_a)_η` is injective,
+  and its image is `{f ∈ 𝒪(U_a)_η | ρ⁻¹ f ∈ 𝒪(U_b)_η}`, where `ρ = (G_b/G_a)_η`. The proof
+  glues the two local sections with `sheaf_glue_pair`.
+* **On the curve (`Setup`).** For a pencil `t₀, t₁` without common zero, set
+  `V n = {f | f ∈ 𝒪(U₀)_η, x⁻ⁿ f ∈ 𝒪(U₁)_η}`. The `GradedPencil` axioms are then immediate.
+  * `V n ≅ H⁰(L^{⊗n})` for `n ≥ 1`. This is `Chart.Data` with `G = tᵢⁿ`, together with
+    `(t₁ⁿ/t₀ⁿ) = (t₁/t₀)ⁿ` (`ratio_powSec`).
+  * **Generation (`exists_div`).** If `L` is ample, `U₀` is affine:
+    `Y ≅ Proj Γ_*(Y, L)` (0C6J, `isIso_projHomOfIsAmple`). Its functions are fractions
+    `T/t₀ᵐ` (01PW, `chartRingMap_bijective`), and `K(Y) = Frac 𝒪(U₀)`.
+* **Assembly.** A basis of `H⁰(L)` lifts to generating sections of an invertible `L' → L`
+  (Stacks 0CC4, `hasGeneratingInvertibleLift_seriesSections`). Then `deg L' = 2`:
+  * `≤ 2` by 0B40 (5);
+  * `≤ 0` would make `L'` trivial (0B40 (4)), but `h⁰(L') ≥ 2`;
+  * `= 1` contradicts `GradedPencil.two_le`, using `h⁰(L'^{⊗n}) = n − 1` for `n ≥ 3` (RR + 0B90).
+
+  With `deg L' = 2`, `dim V n = 2n − 1` for `n ≥ 2`, which gives `IntegralPencilData`.
+
+No new Stacks modules were built.

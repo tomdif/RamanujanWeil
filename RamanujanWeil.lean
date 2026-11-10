@@ -114,3 +114,8 @@ import RamanujanWeil.Arith.DeuringFinalSite
 import RamanujanWeil.Arith.DeuringFinalLattice
 import RamanujanWeil.Arith.DeuringFinal
 import RamanujanWeil.Arith.DeuringFinalAxioms
+import RamanujanWeil.Arith.DeuringG7Genus2PencilAlg
+import RamanujanWeil.Arith.DeuringG7Genus2PencilChart
+import RamanujanWeil.Arith.DeuringG7Genus2PencilGeom
+import RamanujanWeil.Arith.DeuringG7Genus2Pencil
+import RamanujanWeil.Arith.DeuringG7Genus2PencilAxioms
