@@ -74,18 +74,22 @@ Deuring status (all axiom-clean, standard three axioms):
   Lang descent, genus 1 by multiplicativity of χ along isogenies) and a minimal-order base curve
   (`MinBase.existsMinimalBase`, `docs/ARITH_DEURING_MINBASE.md`).
 
-**Current headline** (`RamanujanWeil/Ihara/FinalDeuringTatePol.lean`, axioms `[propext, Classical.choice, Quot.sound]`):
+**Current headlines** (`RamanujanWeil/Arith/DeuringFinal.lean`, `docs/ARITH_DEURING_FINAL.md`; axioms
+`[propext, Classical.choice, Quot.sound]`). The per-class Deuring count `deuringMultiplicity_uncond` is now proved
+with **no** hypothesis, so Deligne's bound follows from either of two elementary-to-state facts about elliptic
+curves over finite fields:
 
 ```lean
-theorem deligneBound_of_tatePol (hfin : TateFinitenessPolAll) : RamanujanTau.DeligneBound
+-- at most one isogeny class per ordinary trace (Tate uniqueness)
+theorem deligneBound_of_multLeOne (h : MultLeOneAll) : RamanujanTau.DeligneBound
+-- every ordinary trace t (p ∤ t, t² < 4q) occurs for some elliptic curve over 𝔽_q (Deuring/Waterhouse existence)
+theorem deligneBound_of_ordinaryTraceExistence (h : OrdinaryTraceExistence) : RamanujanTau.DeligneBound
 ```
 
-The **single remaining named hypothesis** is `TateFinitenessPolAll`: finiteness of principally polarized
-graph quotients of `J_W × J_{W'}` (route F2′ above; steps D, Θ, J and the genus-2 model Props remain).
-`PrimeToPLinkAll` (prime-to-p links between isogenous ordinary Jacobians) is proved (`PLink.primeToPLinkAll`,
-`docs/ARITH_DEURING_PLINK.md`), with no CM theory or p-divisible groups: exact duals of purely inseparable
-maps, `Φ ∈ {π, t − π}` injective on points, and `α = ι + h''`, `β = ι'' + h` with `deg ≡ t^m + … ≢ 0 mod p`.
-The two-hypothesis form `deligneBound_of_tatePol_link` (`Ihara/FinalDeuringLattice.lean`) remains.
+`MultLeOneAll` follows from `TateFinitenessPolAll` (`multLeOneAll_of_tatePol`; route F2′ above, steps D, Θ, J,
+C-Jac and `Genus2PencilFunctionField` remain, ≈ 11–19k lines). `OrdinaryTraceExistence` is equivalent to Deuring's
+reduction theorem for CM curves (≈ 20k+ lines). `PrimeToPLinkAll` is proved (`PLink.primeToPLinkAll`,
+`docs/ARITH_DEURING_PLINK.md`). Earlier forms `deligneBound_of_tatePol` and `deligneBound_of_tatePol_link` remain.
 Milestone docs: `docs/IHARA_*.md`. Building the Ihara closure needs >6 GB for two Stacks modules
 (`ConstantCurveFrobeniusGram`, `Perfect.RelativeDescentAffineDictionary`).
 
