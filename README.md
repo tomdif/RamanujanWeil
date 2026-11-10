@@ -67,13 +67,26 @@ Deuring status (all axiom-clean, standard three axioms):
   `Genus2ModelExistence`, itself reduced (`docs/ARITH_DEURING_G7_GENUS2.md`) to `Genus2CanonicalExistence`
   (invertible degree-2 canonical bundle) and `Genus2PencilFunctionField` (pencil → function-field data); the
   function-field algebra and the Riemann–Roch dimensions h⁰(L^⊗n) = 2n−1 are proved.
-- **Open named Props:** `TateFinitenessPolAll`; `RadicialDual` is **proved** (`radicialDual`, so `FrobHomDual` holds unconditionally;
-  `docs/ARITH_DEURING_RADICIAL.md`); `DeuringClassLatticeAll` fields `rel_iff`/`card_stab` (G8(ii) integral surjectivity) and
-  `surj_class` (G5, `docs/ARITH_DEURING_G5.md`: `WeierstrassDescent` is **proved** (`WModel.weierstrassDescent`;
-  `docs/ARITH_DEURING_DESCENT.md`, `docs/ARITH_DEURING_WMODEL.md`: rigidity, Lang descent, genus 1 by
-  multiplicativity of χ along isogenies), and a minimal-order base curve
-  (`End_π = ℤ[π]`) exists in every ordinary class (`MinBase.existsMinimalBase`, `docs/ARITH_DEURING_MINBASE.md`),
-  so `surj_class` needs no named Prop; cyclic torsion proved).
+- **Also proved:** `RadicialDual` (`radicialDual`, so `FrobHomDual` holds unconditionally;
+  `docs/ARITH_DEURING_RADICIAL.md`); G8(ii) integral surjectivity, `rel_iff`, `card_stab`
+  (`docs/ARITH_DEURING_CLASSLATTICE.md`); `surj_class` (G5, `docs/ARITH_DEURING_G5.md`) via
+  `WModel.weierstrassDescent` (`docs/ARITH_DEURING_DESCENT.md`, `docs/ARITH_DEURING_WMODEL.md`: rigidity,
+  Lang descent, genus 1 by multiplicativity of χ along isogenies) and a minimal-order base curve
+  (`MinBase.existsMinimalBase`, `docs/ARITH_DEURING_MINBASE.md`).
+
+**Current headline** (`RamanujanWeil/Ihara/FinalDeuringLattice.lean`, axioms `[propext, Classical.choice, Quot.sound]`):
+
+```lean
+theorem deligneBound_of_tatePol_link (hfin : TateFinitenessPolAll) (hlink : PrimeToPLinkAll) :
+    RamanujanTau.DeligneBound
+```
+
+The two remaining named hypotheses:
+- `TateFinitenessPolAll`: finiteness of principally polarized graph quotients of `J_W × J_{W'}`
+  (route F2′ above; steps D, Θ, J and the genus-2 model Props remain).
+- `PrimeToPLinkAll`: two isogenous ordinary Jacobians are linked by equivariant `α ≫ β = [n]` with
+  `p ∤ n` (true since `p ∤ disc ℤ[π]`; needs Deuring lifting or the p-divisible splitting
+  `ℤ_p[π] ≅ ℤ_p²`; `docs/ARITH_DEURING_CLASSLATTICE.md`).
 Milestone docs: `docs/IHARA_*.md`. Building the Ihara closure needs >6 GB for two Stacks modules
 (`ConstantCurveFrobeniusGram`, `Perfect.RelativeDescentAffineDictionary`).
 

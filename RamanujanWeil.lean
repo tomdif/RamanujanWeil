@@ -96,3 +96,9 @@ import RamanujanWeil.Arith.DeuringG7Genus2ExistAlg
 import RamanujanWeil.Arith.DeuringG7Genus2ExistRR
 import RamanujanWeil.Arith.DeuringG7Genus2Exist
 import RamanujanWeil.Arith.DeuringG7Genus2ExistAxioms
+import RamanujanWeil.Arith.DeuringG8Int
+import RamanujanWeil.Arith.DeuringG8IntIso
+import RamanujanWeil.Arith.DeuringClassLatticeAlg
+import RamanujanWeil.Arith.DeuringClassLattice
+import RamanujanWeil.Arith.DeuringClassLatticeAxioms
+import RamanujanWeil.Ihara.FinalDeuringLattice
