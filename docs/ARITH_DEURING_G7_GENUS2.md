@@ -1,4 +1,4 @@
-# A3-ord, G7-C: `Genus2ModelExistence`, reduced to two named Props (2026-11-10)
+# A3-ord, G7-C: `Genus2ModelExistence`, reduced to two named Props, then to one (2026-11-10; see §6)
 
 This continues `ARITH_DEURING_G7_WC.md` §2/§3 (step **C** of route F2′, `ARITH_DEURING_G7FIN.md`).
 Target: `Genus2ModelExistence K` (`Arith/DeuringG7Genus2Model.lean`). Every smooth proper
@@ -176,3 +176,59 @@ Estimate: 1.5–2.5k lines (1: 0.4–0.7k, 2: 0.5–1k, 3: 0.5–0.8k).
 
 `nice -n 10 lake build RamanujanWeil.Arith.DeuringG7Genus2ExistAxioms`. ExistAlg about 15 s.
 ExistRR and Exist about 100 s each, mostly import loading.
+
+## 6. Update: `Genus2CanonicalExistence` PROVED (2026-11-10)
+
+`Arith/DeuringG7Genus2Canon.lean` proves
+
+```lean
+theorem genus2CanonicalExistence : Genus2CanonicalExistence K      -- every field K
+theorem genus2ModelExistence_of_pencil (hP : Genus2PencilFunctionField K) :
+    Genus2ModelExistence K
+```
+
+The one remaining named Prop on the route to `Genus2ModelExistence K` is
+**`Genus2PencilFunctionField K`** (§4.2, unchanged).
+
+**The route.** It differs from §4.1: it does not use torsion-free ⇒ locally free.
+Take `L = ω = dualizingSheafOverField s`.
+
+* **Invertibility.** Smooth over a field ⇒ regular (`isRegular_of_smooth_over_field`) ⇒
+  Gorenstein (`isGorenstein_of_isRegular`). Irreducible ⇒ equidimensional
+  (`Equidimensional.of_preirreducibleSpace`). With dimension 1, Stacks 0BS6 (1),
+  `isInvertible_dualizingSheafOverField_of_isGorenstein`, gives `ω` invertible and locally free of
+  rank 1.
+* **`deg ω = 2`.** Stacks 0BS6 (2), `curveDegree_dualizingSheafOverField_eq_neg_two_mul_of_isGorenstein`,
+  gives `deg ω = −2χ(𝒪)`. `eulerCharacteristic_unit_eq_one_sub_genus` gives `χ(𝒪) = 1 − g`.
+  Together, `deg ω = 2g − 2` (`invertibleCurveDegree_dualizing`).
+* **`h⁰(ω) = 2`.** Apply the duality of dimensions at `ℰ = 𝒪`,
+  `finrank_cohomologyOverField_zero_dualTensorDualizingSheafOverField_eq_one`, and read it through
+  `𝒪^∨ ⊗ ω ≅ 𝒪 ⊗ ω ≅ ω` (`unitDualIso`, `tensorProductLeftUnitor`; `dualUnitTensorDualizingIso`).
+  This gives `h⁰(ω) = h¹(𝒪) = g` (`finrank_dualizing_zero`).
+
+The finite-field and point-count alternative was not needed. The statement holds over every
+field.
+
+**Stacks builds.** These modules were built one at a time under `nice -n 10`:
+`GorensteinCurveRiemannRoch`, `DualizingSheafHom`, `DualizingDimensionDuality`,
+`DualizingRiemannRoch`, `PencilDegree` (Tag 0CCR, for §4.2), and their unbuilt dependencies.
+That is 300 modules, about 2 h serial.
+
+**Audit.** `RamanujanWeil/Arith/DeuringG7Genus2FinalAxioms.lean`. Everything depends only on
+`[propext, Classical.choice, Quot.sound]`.
+
+### 6.1 What remains: `Genus2PencilFunctionField`
+
+Sub-steps (a)–(c) of §4.2 are open. `PencilDegree` is now built. Notes for the next attempt:
+
+* `degreeOver` is a `Module.finrank`, so `degreeOver p ≤ 2` does not by itself give
+  finite-dimensionality. `FiniteDimensional K(ℙ¹) K(Y)` must be proved separately.
+* The germ embedding (a) can reuse the graded section ring of `GenusOne/SectionRing*`
+  (`Stacks.GradedSections.sectionRing`, `sectionGerm`, `Stacks.SectionProduct`). It is built on
+  `Stacks.TensorPowers.natTensorPow`, so it needs a bridge to `Invertible.tensorPower`.
+* Pure algebra cannot replace the geometric inputs (b)/(c). A counterexample: on `ℙ¹`, take
+  `V₀ = K`, `V₁ = ⟨1, x⟩` and `V_n = L(n∞ + (n−2)·0)` for `n ≥ 2`. This satisfies every algebraic
+  axiom of `PencilData` (with `dim V_n = 2n − 1`) except the pole condition.
+  * Pole-side remark: `V₃ ∩ K(x)` is the cubic span whenever some `y ∈ V₃ ∖ K(x)` exists, by a
+    dimension count. So (c) could be replaced by the single condition `V₃ ⊄ K(x)`, but that is not
+    obviously easier to prove geometrically.

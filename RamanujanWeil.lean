@@ -108,3 +108,5 @@ import RamanujanWeil.Arith.DeuringPLinkPhi
 import RamanujanWeil.Arith.DeuringPLink
 import RamanujanWeil.Arith.DeuringPLinkAxioms
 import RamanujanWeil.Ihara.FinalDeuringTatePol
+import RamanujanWeil.Arith.DeuringG7Genus2Canon
+import RamanujanWeil.Arith.DeuringG7Genus2FinalAxioms

@@ -65,8 +65,8 @@ Deuring status (all axiom-clean, standard three axioms):
   (`docs/ARITH_DEURING_G7_WC.md`): alternating pairings, anti-isometric gluings ⇒ Lagrangian graphs,
   the theta-group → Weil-pairing bridge, and finiteness of genus-2 curves over 𝔽_q modulo the named
   `Genus2ModelExistence`, itself reduced (`docs/ARITH_DEURING_G7_GENUS2.md`) to `Genus2CanonicalExistence`
-  (invertible degree-2 canonical bundle) and `Genus2PencilFunctionField` (pencil → function-field data); the
-  function-field algebra and the Riemann–Roch dimensions h⁰(L^⊗n) = 2n−1 are proved.
+  (**proved**: ω is invertible of degree 2 with h⁰ = 2, via Gorenstein duality) and `Genus2PencilFunctionField`
+  (pencil → function-field data, open); the function-field algebra and h⁰(L^⊗n) = 2n−1 are proved.
 - **Also proved:** `RadicialDual` (`radicialDual`, so `FrobHomDual` holds unconditionally;
   `docs/ARITH_DEURING_RADICIAL.md`); G8(ii) integral surjectivity, `rel_iff`, `card_stab`
   (`docs/ARITH_DEURING_CLASSLATTICE.md`); `surj_class` (G5, `docs/ARITH_DEURING_G5.md`) via
