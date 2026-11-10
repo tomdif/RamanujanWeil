@@ -85,3 +85,7 @@ import RamanujanWeil.Arith.DeuringDescentLang
 import RamanujanWeil.Arith.DeuringDescentCoord
 import RamanujanWeil.Arith.DeuringDescent
 import RamanujanWeil.Arith.DeuringDescentAxioms
+import RamanujanWeil.Arith.DeuringWModelChi
+import RamanujanWeil.Arith.DeuringWModelGenus
+import RamanujanWeil.Arith.DeuringWModel
+import RamanujanWeil.Arith.DeuringWModelAxioms
