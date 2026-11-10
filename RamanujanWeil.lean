@@ -89,3 +89,6 @@ import RamanujanWeil.Arith.DeuringWModelChi
 import RamanujanWeil.Arith.DeuringWModelGenus
 import RamanujanWeil.Arith.DeuringWModel
 import RamanujanWeil.Arith.DeuringWModelAxioms
+import RamanujanWeil.Arith.DeuringMinBaseAlg
+import RamanujanWeil.Arith.DeuringMinBase
+import RamanujanWeil.Arith.DeuringMinBaseAxioms

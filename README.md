@@ -69,8 +69,9 @@ Deuring status (all axiom-clean, standard three axioms):
   `docs/ARITH_DEURING_RADICIAL.md`); `DeuringClassLatticeAll` fields `rel_iff`/`card_stab` (G8(ii) integral surjectivity) and
   `surj_class` (G5, `docs/ARITH_DEURING_G5.md`: `WeierstrassDescent` is **proved** (`WModel.weierstrassDescent`;
   `docs/ARITH_DEURING_DESCENT.md`, `docs/ARITH_DEURING_WMODEL.md`: rigidity, Lang descent, genus 1 by
-  multiplicativity of χ along isogenies), so `surj_class` needs only a minimal-order base curve
-  (`End_π = ℤ[π]`); cyclic torsion proved).
+  multiplicativity of χ along isogenies), and a minimal-order base curve
+  (`End_π = ℤ[π]`) exists in every ordinary class (`MinBase.existsMinimalBase`, `docs/ARITH_DEURING_MINBASE.md`),
+  so `surj_class` needs no named Prop; cyclic torsion proved).
 Milestone docs: `docs/IHARA_*.md`. Building the Ihara closure needs >6 GB for two Stacks modules
 (`ConstantCurveFrobeniusGram`, `Perfect.RelativeDescentAffineDictionary`).
 
