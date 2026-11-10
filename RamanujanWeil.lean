@@ -128,3 +128,8 @@ import RamanujanWeil.Arith.DeuringG7CJacPic0
 import RamanujanWeil.Arith.DeuringG7CJacIso
 import RamanujanWeil.Arith.DeuringG7CJacBase
 import RamanujanWeil.Arith.DeuringG7CJacAxioms
+import RamanujanWeil.Arith.DeuringG7DGeomTrans
+import RamanujanWeil.Arith.DeuringG7DGeomTheta
+import RamanujanWeil.Arith.DeuringG7DGeomKer
+import RamanujanWeil.Arith.DeuringG7DGeomFamily
+import RamanujanWeil.Arith.DeuringG7DGeomAxioms
