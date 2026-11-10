@@ -102,3 +102,9 @@ import RamanujanWeil.Arith.DeuringClassLatticeAlg
 import RamanujanWeil.Arith.DeuringClassLattice
 import RamanujanWeil.Arith.DeuringClassLatticeAxioms
 import RamanujanWeil.Ihara.FinalDeuringLattice
+import RamanujanWeil.Arith.DeuringPLinkField
+import RamanujanWeil.Arith.DeuringPLinkRC
+import RamanujanWeil.Arith.DeuringPLinkPhi
+import RamanujanWeil.Arith.DeuringPLink
+import RamanujanWeil.Arith.DeuringPLinkAxioms
+import RamanujanWeil.Ihara.FinalDeuringTatePol

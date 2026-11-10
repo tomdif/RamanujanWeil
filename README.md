@@ -74,19 +74,18 @@ Deuring status (all axiom-clean, standard three axioms):
   Lang descent, genus 1 by multiplicativity of χ along isogenies) and a minimal-order base curve
   (`MinBase.existsMinimalBase`, `docs/ARITH_DEURING_MINBASE.md`).
 
-**Current headline** (`RamanujanWeil/Ihara/FinalDeuringLattice.lean`, axioms `[propext, Classical.choice, Quot.sound]`):
+**Current headline** (`RamanujanWeil/Ihara/FinalDeuringTatePol.lean`, axioms `[propext, Classical.choice, Quot.sound]`):
 
 ```lean
-theorem deligneBound_of_tatePol_link (hfin : TateFinitenessPolAll) (hlink : PrimeToPLinkAll) :
-    RamanujanTau.DeligneBound
+theorem deligneBound_of_tatePol (hfin : TateFinitenessPolAll) : RamanujanTau.DeligneBound
 ```
 
-The two remaining named hypotheses:
-- `TateFinitenessPolAll`: finiteness of principally polarized graph quotients of `J_W × J_{W'}`
-  (route F2′ above; steps D, Θ, J and the genus-2 model Props remain).
-- `PrimeToPLinkAll`: two isogenous ordinary Jacobians are linked by equivariant `α ≫ β = [n]` with
-  `p ∤ n` (true since `p ∤ disc ℤ[π]`; needs Deuring lifting or the p-divisible splitting
-  `ℤ_p[π] ≅ ℤ_p²`; `docs/ARITH_DEURING_CLASSLATTICE.md`).
+The **single remaining named hypothesis** is `TateFinitenessPolAll`: finiteness of principally polarized
+graph quotients of `J_W × J_{W'}` (route F2′ above; steps D, Θ, J and the genus-2 model Props remain).
+`PrimeToPLinkAll` (prime-to-p links between isogenous ordinary Jacobians) is proved (`PLink.primeToPLinkAll`,
+`docs/ARITH_DEURING_PLINK.md`), with no CM theory or p-divisible groups: exact duals of purely inseparable
+maps, `Φ ∈ {π, t − π}` injective on points, and `α = ι + h''`, `β = ι'' + h` with `deg ≡ t^m + … ≢ 0 mod p`.
+The two-hypothesis form `deligneBound_of_tatePol_link` (`Ihara/FinalDeuringLattice.lean`) remains.
 Milestone docs: `docs/IHARA_*.md`. Building the Ihara closure needs >6 GB for two Stacks modules
 (`ConstantCurveFrobeniusGram`, `Perfect.RelativeDescentAffineDictionary`).
 
