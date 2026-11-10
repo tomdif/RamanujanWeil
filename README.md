@@ -92,8 +92,8 @@ half of step D (Mumford's level-subgroup criterion for graph quotients, principa
 C-Jac is proved (`exists_equivariant_jacobianIso`, `docs/ARITH_DEURING_G7_CJAC.md`); the theta group of 𝒪(N·O) is
 constructed from the function field (`docs/ARITH_DEURING_G7DGEOM.md`), and the seam is split as
 `deligneBound_of_split : DGeomGapsAll → ThetaLevelDescent → PrincipalFiniteness → DeligneBound`, with
-`DGeomGaps` = RR-stabilizer bridge + Heisenberg (Weil pairing nondegenerate) + Mathlib/Jacobian group-law
-agreement, `ThetaLevelDescent` = module descent along the G6 quotient, `PrincipalFiniteness` = Θ + J + C-descent, itself reduced
+`DGeomGaps` = RR-stabilizer bridge (**proved** for N ≥ 2, `rrStabilizerBridge`, `docs/ARITH_DEURING_G7DGAPS.md`)
++ `ThetaHeisenberg` (Weil pairing nondegenerate) + `AbelJacobiMathlib` (Mathlib/Jacobian group-law agreement), `ThetaLevelDescent` = module descent along the G6 quotient, `PrincipalFiniteness` = Θ + J + C-descent, itself reduced
 (`docs/ARITH_DEURING_G7_PRINCIPAL.md`, `principalFiniteness_of_thetaJacobianModel`) to `ThetaJacobianModel`
 (Θ + J, ≈ 6–9.5k) and `Genus2FrobDescent` (≈ 0.6–1.2k), consuming the proved C and C-Jac; the product case is
 handled by a pigeonhole over pairs of Weierstrass curves. `OrdinaryTraceExistence` is equivalent to Deuring's

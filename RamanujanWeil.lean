@@ -137,3 +137,9 @@ import RamanujanWeil.Arith.DeuringG7ThetaSwap
 import RamanujanWeil.Arith.DeuringG7PrincipalFinModel
 import RamanujanWeil.Arith.DeuringG7PrincipalFin
 import RamanujanWeil.Arith.DeuringG7PrincipalFinAxioms
+import RamanujanWeil.Arith.DeuringG7DGapsVal
+import RamanujanWeil.Arith.DeuringG7DGapsConj
+import RamanujanWeil.Arith.DeuringG7DGapsTransl
+import RamanujanWeil.Arith.DeuringG7DGapsBridge
+import RamanujanWeil.Arith.DeuringG7DGapsAll
+import RamanujanWeil.Arith.DeuringG7DGapsAxioms
