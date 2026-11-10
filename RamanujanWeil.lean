@@ -92,3 +92,7 @@ import RamanujanWeil.Arith.DeuringWModelAxioms
 import RamanujanWeil.Arith.DeuringMinBaseAlg
 import RamanujanWeil.Arith.DeuringMinBase
 import RamanujanWeil.Arith.DeuringMinBaseAxioms
+import RamanujanWeil.Arith.DeuringG7Genus2ExistAlg
+import RamanujanWeil.Arith.DeuringG7Genus2ExistRR
+import RamanujanWeil.Arith.DeuringG7Genus2Exist
+import RamanujanWeil.Arith.DeuringG7Genus2ExistAxioms

@@ -64,7 +64,9 @@ Deuring status (all axiom-clean, standard three axioms):
   genus-2 curve, genus-2 finiteness (15–25k lines). Steps W and C are partly done
   (`docs/ARITH_DEURING_G7_WC.md`): alternating pairings, anti-isometric gluings ⇒ Lagrangian graphs,
   the theta-group → Weil-pairing bridge, and finiteness of genus-2 curves over 𝔽_q modulo the named
-  `Genus2ModelExistence` (Riemann–Roch / canonical map).
+  `Genus2ModelExistence`, itself reduced (`docs/ARITH_DEURING_G7_GENUS2.md`) to `Genus2CanonicalExistence`
+  (invertible degree-2 canonical bundle) and `Genus2PencilFunctionField` (pencil → function-field data); the
+  function-field algebra and the Riemann–Roch dimensions h⁰(L^⊗n) = 2n−1 are proved.
 - **Open named Props:** `TateFinitenessPolAll`; `RadicialDual` is **proved** (`radicialDual`, so `FrobHomDual` holds unconditionally;
   `docs/ARITH_DEURING_RADICIAL.md`); `DeuringClassLatticeAll` fields `rel_iff`/`card_stab` (G8(ii) integral surjectivity) and
   `surj_class` (G5, `docs/ARITH_DEURING_G5.md`: `WeierstrassDescent` is **proved** (`WModel.weierstrassDescent`;
