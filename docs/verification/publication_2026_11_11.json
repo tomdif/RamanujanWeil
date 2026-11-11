@@ -1,0 +1,74 @@
+{
+  "date": "2026-11-11",
+  "verified_at_utc": "2026-11-11T12:12:37.440148+00:00",
+  "status": "passed",
+  "base_commit": "41d72d7c19266684e9e726e243561ceb13dde07f",
+  "toolchain": "leanprover/lean4:v4.34.0-rc2",
+  "verification_command": "python3 scripts/verify_lean.py",
+  "full_root_build": {
+    "command": "lake --log-level=error build RamanujanWeil RamanujanWeil.Axioms",
+    "exit_code": 0,
+    "jobs": 30382,
+    "mode": "Incremental build with pinned dependencies and existing local artifacts; all required targets checked."
+  },
+  "audit": {
+    "command": "lake env lean scripts/audit/public.lean",
+    "exit_code": 0,
+    "declarations": 62,
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "groups": {
+      "Weil bridge": 13,
+      "Abel-Jacobi and Heisenberg": 20,
+      "Ample descent": 11,
+      "Theta and Jacobian model": 12,
+      "Genus-2 canonical descent": 6
+    },
+    "output": "publication_2026_11_11.public.axioms.txt",
+    "output_sha256": "c00f40961cf8d6c2b1f1f0b61e0ff5bfdc3fc110d8bf4b14ab93d01eb1b879f8"
+  },
+  "additional_checks": [
+    {
+      "command": "python3 scripts/check_repository.py",
+      "exit_code": 0,
+      "result": "Passed: 262 Lean source/audit files, 54 Markdown files, 22 local links; project imports and source hygiene checked.\nThis is a source/documentation check, not Lean proof verification."
+    },
+    {
+      "command": "git diff --cached --check",
+      "exit_code": 0
+    }
+  ],
+  "scope": [
+    "The geometric and arithmetic Deligne routes remain conditional on their named inputs.",
+    "GlueAmpleDescent is proved. The Heisenberg input follows from the Abel-Jacobi comparison, reduced to PicClassBridgeAll.",
+    "The theta model is reduced to five propositions; genus-2 canonical descent is reduced to presentation rigidity, with fixed-generator descent still separate.",
+    "Axiom checks do not discharge explicit theorem hypotheses or validate mathematical interpretation."
+  ],
+  "source_sha256": {
+    "lean-toolchain": "8190e75a201741065fe508b28955dd64dd72d090babe5f70ce6848879d68ae88",
+    "lakefile.toml": "63208d623b11ec25b494125584d7320801c63184381101ecb13137d27b5f243b",
+    "lake-manifest.json": "5699a2ebe83d1caffa0ece00c60c5a6e03ce259f069e2fb19259f05fb731783c",
+    "RamanujanWeil/Axioms.lean": "3c5c913873fb10bac5e54c6b09df48e24f99c270b2aafde123f549bb2c100955",
+    "scripts/verify_lean.py": "b23aa94c0403c97fb2c43a54d12bd123cf16094f62911d1034084ff6d481372f",
+    "scripts/check_repository.py": "6dea758ffe6e7b49257651f80f772e590fd4001906192a890815ac127c298b0b",
+    "RamanujanWeil.lean": "7e006c9ee593a51719a2e0782f9262e9ca325c0339663414c2a5ddc7b2249128",
+    "RamanujanWeil/Arith/DeuringG7AJCore.lean": "7457f2e00205e52d2820534e824b1b821703db5a6f4a6ee454a7adc3785a0ceb",
+    "RamanujanWeil/Arith/DeuringG7AJHeisAxioms.lean": "a4249109b87589204d148623e1e29adb3d222bfca362ee2aa87e2c1688dc9354",
+    "RamanujanWeil/Arith/DeuringG7AmpleDescent.lean": "6caffff8fe666d2c5a9b19fc03b973e7f902022ff3a6502168d7a777ca5ea465",
+    "RamanujanWeil/Arith/DeuringG7AmpleDescentAxioms.lean": "04d6e52c35a58bd050a070c9722c55b214ebac28c97e3b5ad41f244a6fd531a7",
+    "RamanujanWeil/Arith/DeuringG7G2Desc2Canon.lean": "ffc3a059295acdf5a6ea81616313616d425beaffb108f95b81a1faf65726327b",
+    "RamanujanWeil/Arith/DeuringG7G2Desc2CanonAxioms.lean": "ecd2f0f886dcbf645eb510c54564a99e0b0f6da26e668821a4f458aefc54543d",
+    "RamanujanWeil/Arith/DeuringG7HeisAll.lean": "50aebae36358f0c7234916dd67f2323281423ad1e08bec86443ddf7c85560c17",
+    "RamanujanWeil/Arith/DeuringG7HeisEval.lean": "d028bc068d3f5c534fe6968341f14950f58c5ffb69384134f2150a6f05fd8a8c",
+    "RamanujanWeil/Arith/DeuringG7HeisMain.lean": "6ee81b658c21bb2dd127b998aced69d93c4f830183281a0dfcbf0e976994d281",
+    "RamanujanWeil/Arith/DeuringG7HeisZeros.lean": "113e4954339296f6812e1a4853741dbfe552dd3f516f360a661b3a8bf194c401",
+    "RamanujanWeil/Arith/DeuringG7ThetaJ.lean": "c6e48020f29baa3db5017f3a1037dad64538eec6cc82ba50926225f12d7405c9",
+    "RamanujanWeil/Arith/DeuringG7ThetaJAxioms.lean": "30960226a7c46ac1d997f031481f2b2d93663fc677a4583668abbd5141fadbdf",
+    "RamanujanWeil/Arith/DeuringG7ThetaJProd.lean": "ce28bd2abd2996fb78ee5fe6d408ea0e59dd3d41d44e7ebb5eb58436cebbce44",
+    "RamanujanWeil/Arith/DeuringG7ThetaJTwist.lean": "e879129cb8cbc4397713b219a46e5dca9d06969b279c80c7e73a3cd58bcae6dc",
+    "scripts/audit/public.lean": "a32dcf09aa6b8e086a2f758dd542ba9ff35c9e059f52f25f5e2a9a0d81b5df6f"
+  }
+}

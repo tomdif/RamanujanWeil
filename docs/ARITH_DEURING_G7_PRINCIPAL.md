@@ -1,5 +1,11 @@
 # A3-ord, G7: `PrincipalFiniteness` reduced to Θ + J and C-descent (2026-11-10)
 
+> **Current refinement:** [Theta/Jacobian reductions](ARITH_DEURING_G7_THETAJ.md)
+> prove the Frobenius twist and product branch, and splits the remaining input
+> into five named propositions. [Genus-2 descent](ARITH_DEURING_G7_G2DESCENT.md)
+> and `DeuringG7G2Desc2Canon.lean` reduce C-descent to hyperelliptic presentation
+> rigidity and fixed-generator descent. Estimates below belong to the earlier snapshot.
+
 This continues `ARITH_DEURING_G7DGEOM.md` §5 (the seam `PrincipalFiniteness`),
 `ARITH_DEURING_G7D.md` §3, `ARITH_DEURING_G7FIN.md` §2(d), `ARITH_DEURING_G7_GENUS2.md` (step C,
 proved) and `ARITH_DEURING_G7_CJAC.md` (C-Jac, proved). New files only:

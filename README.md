@@ -1,109 +1,100 @@
 # RamanujanWeil
 
-Deligne's bound `τ(p)² ≤ 4·p¹¹` for Ramanujan's τ, proved in Lean 4 from the **Weil Riemann hypothesis
-formalized by Axiom** ([AxiomMath/Weil](https://github.com/AxiomMath/Weil), pinned at `27cdb20`),
-conditional on the Eichler–Shimura–Deligne realization of `Δ` (`TauRealization`).
+[![Repository checks](https://github.com/tomdif/RamanujanWeil/actions/workflows/repository-checks.yml/badge.svg)](https://github.com/tomdif/RamanujanWeil/actions/workflows/repository-checks.yml)
 
-* `RamanujanWeil.deligneBound_of_realization :
-   (∀ p, p.Prime → Nonempty (TauRealization p)) → ∀ p, p.Prime → τ p ^ 2 ≤ 4 * p ^ 11`
-* `TauRealization p`: a smooth proper scheme `X/𝔽_p`, a prime `ℓ ≠ p`, and a 2-dimensional
-  geometric-Frobenius-stable subspace of `H¹¹(X_𝔽̄_p, ℚ_ℓ)` on which Frobenius has trace `τ(p)`
-  (no size condition; the only analytic input is `Weil.satisfiesWeilEstimate`).
-* `τ` is a verbatim copy of `RamanujanTau/Basic.lean` from
-  [RamanujanLean](https://github.com/tomdif/RamanujanLean), so the conclusion is exactly the
-  `DeligneBound` hypothesis used there (e.g. by Hafner's positive-proportion theorem).
+Lean 4 developments toward **Deligne’s bound for Ramanujan’s τ**:
 
-Axioms of every headline: `[propext, Classical.choice, Quot.sound]` (`RamanujanWeil/Axioms.lean`).
-No `sorry`, no `native_decide`, no new axioms. Details: [docs/WEIL_BRIDGE.md](docs/WEIL_BRIDGE.md).
-
-## Second route: Ihara–Birch (no realization hypothesis)
-
-`RamanujanWeil.Ihara.deligneBound_of_ihara_all :
-   (∀ (p : ℕ) [Fact p.Prime], IharaIdentity p) → RamanujanTau.DeligneBound`
-(per prime: `deligneBound_of_ihara_prime`). The geometric side is fully formalized: Weil II
-(Stacks) applied to `Sym¹⁰R¹f_!ℚ_ℓ` on the moduli of Weierstrass cubics over `𝔽_p`, proper base
-change to the fibres, `H¹` of each elliptic fibre (Stacks Tag 0C1Z), and the point bookkeeping.
-The **only** remaining hypothesis is `IharaIdentity p`
-(`RamanujanWeil/Ihara/IharaStatement.lean`), an elementary identity about finite fields:
-
-  Σ_{c ∈ 𝔽_{pⁿ}⁵, Δ(c) ≠ 0} symTrace₁₀(pⁿ + 1 − #E_c(𝔽_{pⁿ}), pⁿ) = p³ⁿ(pⁿ − 1)(−1 − αⁿ − βⁿ),
-
-with `α, β` the roots of `X² − τ(p)X + p¹¹` (checked numerically, `scripts/scout/`). Proving it is
-the arithmetic half (Eichler–Selberg trace formula, class numbers, Deuring); its current state is
-below: Eichler–Selberg and Kronecker–Hurwitz are proved, and Deuring is reduced to the named Props listed
-at the end of this section.
-Axioms: `[propext, Classical.choice, Quot.sound]` (`RamanujanWeil/Ihara/FinalAxioms.lean`).
-Weaker sufficient hypothesis (`RamanujanWeil/Ihara/FinalApprox.lean`):
-`deligneBound_of_iharaApprox_all : (∀ (p : ℕ) [Fact p.Prime], IharaApprox p) → DeligneBound`, where
-`IharaApprox p` allows an error `O((n+1)^k·p^{19n/2})` in the identity. With it the supersingular
-tuples (`p ∣ a_c`) only need a size bound, proved in `Arith/SupersingularBound.lean`
-(`#{c : p ∣ a_c} ≤ p·q⁴`). Route for the remaining arithmetic: `docs/ARITH_ROUTE.md`.
-Current frontier (`RamanujanWeil/Ihara/FinalES.lean`):
-`deligneBound_of_Deuring : (∀ p [Fact p.Prime], OrdinaryDeuring hurwitz p) → RamanujanTau.DeligneBound`.
-**Eichler–Selberg for `S₁₂(SL₂ℤ)` at all `n` is proved unconditionally**
-(`Arith/ESAnalytic.lean`, `eichlerSelberg_all`; Popa–Zagier route, Eichler integral + Bol + a
-certified numerical non-vanishing of Δ's period polynomial). Also proved: Hurwitz class numbers and
-`H(p²N)`, Weierstrass orbit count, supersingular bound, Hasse for all tuples, τ Hecke recurrence.
-Exact Deuring is no longer needed (`RamanujanWeil/Ihara/FinalDeuringApprox.lean`,
-`docs/ARITH_DEURING_APPROX.md`): `deligneBound_of_DeuringMult_unique` needs only a per-class count
-`DeuringMultiplicity` (`N(t) = q³(q−1)·m(t)·H(4q−t²)/2`) plus `m(t) ≤ 1` (Tate uniqueness); the
-`_exists` variant takes `m(t) ≥ 1` instead. Kronecker–Hurwitz is proved (`Arith/DeuringApproxKH.lean`).
-With `mult` = number of isogeny classes (`Arith/DeuringMultDef.lean`), `mult ≤ 1` is proved from Tate:
-`deligneBound_of_classLattice_tate (hfin : TateFinitenessAll) (hL : ∀ p, DeuringClassLatticeAll p)`
-(`Ihara/FinalDeuringTate.lean`, `docs/ARITH_DEURING_MULT.md`).
-
-Deuring status (all axiom-clean, standard three axioms):
-- **Done:** G1 (concrete Jacobian of `W`, Abel map an isomorphism in genus 1, Frobenius compatibility,
-  rigidity, `FrobIso ≃` equivariant Jacobian isos; `docs/ARITH_DEURING_G1*.md`); G6 (quotients of
-  abelian varieties by finite subgroups); G7 (Tate's gluing; `docs/ARITH_DEURING_G7.md`); G8 (dual
-  isogenies up to the inseparable part, `End_π ⊗ ℚ = ℚ(π)`, `Hom_π(A₀,A)` free of rank 2 with trace `t`,
-  det `q`, the lattice field `Λ`; `docs/ARITH_DEURING_G8.md`).
-- **Finiteness weakened:** `mult ≤ 1` now follows from `TateFinitenessPolAll` (principally polarized
-  graph quotients only, strictly weaker than `TateFinitenessAll`; `docs/ARITH_DEURING_G7FIN.md`,
-  `mult_le_one_pol`). Remaining route F2′: Weil pairing, descent of the polarization, theta divisor =
-  genus-2 curve, genus-2 finiteness (15–25k lines). Steps W and C are partly done
-  (`docs/ARITH_DEURING_G7_WC.md`): alternating pairings, anti-isometric gluings ⇒ Lagrangian graphs,
-  the theta-group → Weil-pairing bridge, and finiteness of genus-2 curves over 𝔽_q modulo the named
-  `Genus2ModelExistence`, itself reduced (`docs/ARITH_DEURING_G7_GENUS2.md`) to `Genus2CanonicalExistence`
-  (**proved**: ω is invertible of degree 2 with h⁰ = 2, via Gorenstein duality) and `Genus2PencilFunctionField`
-  (**proved**, `Pencil.genus2PencilFunctionField`), so `Genus2ModelExistence` is proved and step C is complete.
-- **Also proved:** `RadicialDual` (`radicialDual`, so `FrobHomDual` holds unconditionally;
-  `docs/ARITH_DEURING_RADICIAL.md`); G8(ii) integral surjectivity, `rel_iff`, `card_stab`
-  (`docs/ARITH_DEURING_CLASSLATTICE.md`); `surj_class` (G5, `docs/ARITH_DEURING_G5.md`) via
-  `WModel.weierstrassDescent` (`docs/ARITH_DEURING_DESCENT.md`, `docs/ARITH_DEURING_WMODEL.md`: rigidity,
-  Lang descent, genus 1 by multiplicativity of χ along isogenies) and a minimal-order base curve
-  (`MinBase.existsMinimalBase`, `docs/ARITH_DEURING_MINBASE.md`).
-
-**Current headlines** (`RamanujanWeil/Arith/DeuringFinal.lean`, `docs/ARITH_DEURING_FINAL.md`; axioms
-`[propext, Classical.choice, Quot.sound]`). The per-class Deuring count `deuringMultiplicity_uncond` is now proved
-with **no** hypothesis, so Deligne's bound follows from either of two elementary-to-state facts about elliptic
-curves over finite fields:
-
-```lean
--- at most one isogeny class per ordinary trace (Tate uniqueness)
-theorem deligneBound_of_multLeOne (h : MultLeOneAll) : RamanujanTau.DeligneBound
--- every ordinary trace t (p ∤ t, t² < 4q) occurs for some elliptic curve over 𝔽_q (Deuring/Waterhouse existence)
-theorem deligneBound_of_ordinaryTraceExistence (h : OrdinaryTraceExistence) : RamanujanTau.DeligneBound
+```text
+τ(p)² ≤ 4p¹¹    for every prime p.
 ```
 
-`MultLeOneAll` follows from `TateFinitenessPolAll` (`multLeOneAll_of_tatePol`) and from the sharper
-`ThetaDescentFinitenessAll` (`G7D.deligneBound_of_thetaDescent`, `docs/ARITH_DEURING_G7D.md`): the group-theoretic
-half of step D (Mumford's level-subgroup criterion for graph quotients, principal descended polarization) is proved;
-C-Jac is proved (`exists_equivariant_jacobianIso`, `docs/ARITH_DEURING_G7_CJAC.md`); the theta group of 𝒪(N·O) is
-constructed from the function field (`docs/ARITH_DEURING_G7DGEOM.md`), and the seam is split as
-`deligneBound_of_split : DGeomGapsAll → ThetaLevelDescent → PrincipalFiniteness → DeligneBound`, with
-`DGeomGaps` = RR-stabilizer bridge (**proved** for N ≥ 2, `rrStabilizerBridge`, `docs/ARITH_DEURING_G7DGAPS.md`)
-+ `ThetaHeisenberg` (Weil pairing nondegenerate) + `AbelJacobiMathlib` (Mathlib/Jacobian group-law agreement), `ThetaLevelDescent` = module descent along the G6 quotient (h⁰ = 1 of the descended bundle **proved** from
-the theta-group representation on L(N·O) ⊗ L(N·O)′, `docs/ARITH_DEURING_G7_LEVELDESCENT.md`; reduced to
-`LevelSectionDescent` + `GlueAmpleDescent` at odd primes ℓ invertible in k, via `deligneBound_of_levelDescent`), `PrincipalFiniteness` = Θ + J + C-descent, itself reduced
-(`docs/ARITH_DEURING_G7_PRINCIPAL.md`, `principalFiniteness_of_thetaJacobianModel`) to `ThetaJacobianModel`
-(Θ + J, ≈ 6–9.5k) and `Genus2FrobDescent` (Lang's theorem for hyperelliptic model changes proved, `docs/ARITH_DEURING_G7_G2DESCENT.md`;
-reduced to `Genus2FrobCanonical` + `Genus2FixedDescent`), consuming the proved C and C-Jac; the product case is
-handled by a pigeonhole over pairs of Weierstrass curves. `OrdinaryTraceExistence` is equivalent to Deuring's
-reduction theorem for CM curves (≈ 20k+ lines). `PrimeToPLinkAll` is proved (`PLink.primeToPLinkAll`,
-`docs/ARITH_DEURING_PLINK.md`). Earlier forms `deligneBound_of_tatePol` and `deligneBound_of_tatePol_link` remain.
-Milestone docs: `docs/IHARA_*.md`. Building the Ihara closure needs >6 GB for two Stacks modules
-(`ConstantCurveFrobeniusGram`, `Perfect.RelativeDescentAffineDictionary`).
+**The bound is still conditional.** The project formalizes two routes from
+Axiom’s Weil results to this inequality, and records the remaining arithmetic
+and geometric inputs as named hypotheses. No `sorry`, `native_decide`, or new
+axiom declarations are used. Headline axiom audits expect only `propext`,
+`Classical.choice`, and `Quot.sound`; those audits do not discharge explicit
+hypotheses.
 
-Build: `lake exe cache get && lake build RamanujanWeil RamanujanWeil.Axioms`. Stacks/Weil have no
-cache; the import closure is ~20k modules (≈20 h on a 14-core Mac, ~24 GB `.lake`).
+**[Weil bridge](docs/WEIL_BRIDGE.md) · [Arithmetic route](docs/ARITH_ROUTE.md) ·
+[Deuring assembly](docs/ARITH_DEURING_FINAL.md) ·
+[Verification](docs/verification/publication_2026_11_11.json)**
+
+## The two routes
+
+| Route | Proved reduction | Remaining input |
+|---|---|---|
+| Geometric realization | `deligneBound_of_realization` applies the Weil estimate to a two-dimensional Frobenius-stable subspace of degree-11 cohomology with trace `τ(p)` | Construct `TauRealization p` for every prime |
+| Ihara–Birch and Deuring | The geometric estimate, Eichler–Selberg trace formula, Kronecker–Hurwitz identity, and per-class Deuring multiplicity count are proved | Ordinary isogeny-class uniqueness (`MultLeOneAll`), or ordinary trace existence |
+
+The second route reduces uniqueness to finiteness of the relevant principally
+polarized quotient surfaces. It has proved Jacobian construction, isogeny and
+class-lattice steps, the Riemann–Roch stabilizer bridge, genus-2 models,
+Jacobian functoriality, and the one-dimensional invariant-section count.
+The latest source also supplies ample descent and reduces Heisenberg
+nondegeneracy to the Abel–Jacobi comparison.
+
+## Current proof frontier
+
+Updated 2026-11-11. These are the remaining inputs on the geometric-finiteness
+route; older milestone documents retain their dated development history.
+
+| Input | What remains | Source / guide |
+|---|---|---|
+| `PicClassBridgeAll` | Restrict Picard classes to the affine chart and compare with Mathlib’s ideal class group; this supplies Abel–Jacobi compatibility and the Heisenberg input | [AJ and Heisenberg](docs/ARITH_DEURING_G7_AJHEIS.md) |
+| `LevelSectionDescent` | Construct the module descent and identify global sections with the level-subgroup invariants | [Level descent](docs/ARITH_DEURING_G7_LEVELDESCENT.md) |
+| `ThetaJacobianModel` | Theta-divisor dichotomy, Frobenius stability, Jacobian identification, and the two remaining Frobenius properties | [Five precise inputs](docs/ARITH_DEURING_G7_THETAJ.md) |
+| `Genus2FrobDescent` | Hyperelliptic presentation rigidity and fixed-generator descent; Lang’s model-change step is proved | [Genus-2 descent](docs/ARITH_DEURING_G7_G2DESCENT.md), [rigidity reduction](RamanujanWeil/Arith/DeuringG7G2Desc2Canon.lean) |
+
+`GlueAmpleDescent` is discharged using Stacks 0B5V;
+[ample descent](docs/ARITH_DEURING_G7_AMPLE.md) corrects an earlier note that
+this theorem was unavailable. `ThetaHeisenbergAll` follows from
+`AbelJacobiAll`; it is not an additional independent input once the class-group
+bridge is proved. `ThetaJacobianModel` and `Genus2FrobDescent` together imply
+[principal finiteness](docs/ARITH_DEURING_G7_PRINCIPAL.md).
+
+## Build and audit
+
+With `elan` installed:
+
+```sh
+git clone https://github.com/tomdif/RamanujanWeil.git
+cd RamanujanWeil
+lake exe cache get
+python3 scripts/verify_lean.py
+python3 scripts/check_repository.py
+```
+
+The pinned toolchain is Lean `v4.34.0-rc2`. The
+[manifest](lake-manifest.json) fixes AxiomMath/Weil at `27cdb20`, Stacks at
+`012108f`, and Mathlib at `16edf57`. Do not update dependencies when reproducing
+the recorded proof snapshot.
+
+The import closure exceeds 25,000 build jobs. A fresh Stacks/Weil build can take
+many hours and requires substantial memory and disk space. Some dependency
+modules have used more than 6 GB individually. GitHub runs source and
+link checks. The 2026-11-11 full build passed (30,382 jobs), and all 62 public
+audit declarations used only the expected standard axioms. Source hashes and
+outputs are in the [publication record](docs/verification/publication_2026_11_11.json).
+
+The verifier builds `RamanujanWeil` and `RamanujanWeil.Axioms`, then checks
+62 declarations across the Weil bridge and latest reductions in one process.
+It rejects unexpected axioms and saves logs under
+`/tmp/ramanujan-weil-verification` (override with `--output-dir`).
+To inspect the reductions individually:
+
+```sh
+lake env lean RamanujanWeil/Arith/DeuringG7AJHeisAxioms.lean
+lake env lean RamanujanWeil/Arith/DeuringG7AmpleDescentAxioms.lean
+lake env lean RamanujanWeil/Arith/DeuringG7ThetaJAxioms.lean
+lake env lean RamanujanWeil/Arith/DeuringG7G2Desc2CanonAxioms.lean
+```
+
+## Relationship to RamanujanLean
+
+[RamanujanLean](https://github.com/tomdif/RamanujanLean) uses Lean
+`v4.30.0-rc2`; this package uses the newer toolchain required by Weil/Stacks.
+[Tau.lean](RamanujanWeil/Tau.lean) copies its computable τ definition, keeping
+the namespace and statement identical. The repositories are not yet a single
+importable dependency graph. Closing the mathematical inputs and reconciling
+the toolchains are both required before downstream results in RamanujanLean
+can consume an unconditional Deligne theorem.

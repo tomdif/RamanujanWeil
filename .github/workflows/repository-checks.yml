@@ -1,0 +1,17 @@
+name: Repository checks
+
+on: [push, pull_request, workflow_dispatch]
+
+permissions:
+  contents: read
+
+jobs:
+  source-and-documentation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.1.0
+        with:
+          python-version: '3.12'
+      - name: Check imports, proof tokens, and documentation links
+        run: python3 scripts/check_repository.py

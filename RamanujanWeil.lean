@@ -149,3 +149,9 @@ import RamanujanWeil.Arith.DeuringG7Genus2DescentAxioms
 import RamanujanWeil.Arith.DeuringG7LevelDescentRep
 import RamanujanWeil.Arith.DeuringG7LevelDescent
 import RamanujanWeil.Arith.DeuringG7LevelDescentAxioms
+
+-- Current geometric reductions and their axiom audits.
+import RamanujanWeil.Arith.DeuringG7AJHeisAxioms
+import RamanujanWeil.Arith.DeuringG7AmpleDescentAxioms
+import RamanujanWeil.Arith.DeuringG7ThetaJAxioms
+import RamanujanWeil.Arith.DeuringG7G2Desc2CanonAxioms

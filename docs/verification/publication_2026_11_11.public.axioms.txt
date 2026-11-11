@@ -1,0 +1,132 @@
+'RamanujanTau.tau_two' does not depend on any axioms
+'RamanujanTau.tau_three' does not depend on any axioms
+'RamanujanTau.tau_five' does not depend on any axioms
+'RamanujanWeil.isRoot_map_charpoly_of_isRoot_map_charpoly_restrict' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RamanujanWeil.norm_map_trace_restrict_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RamanujanWeil.nonempty_padic_ringHom_complex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RamanujanWeil.norm_map_trace_le_of_stable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RamanujanWeil.int_sq_le_of_stable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RamanujanWeil.tau_sq_le_of_realization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RamanujanWeil.deligneBound_of_realization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RamanujanWeil.deligneBound_of_realization'' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RamanujanWeil.deligneBound_instance_of_realization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Weil.satisfiesWeilEstimate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.DGeom.hasVal_trans' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.DGeom.eval_eq_zero_of_eigen' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.DGeom.mul_conj_eq_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.DGeom.evPt_conj' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.DGeom.exists_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.DGeom.right_eq_zero_of_left_const' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.DGeom.exists_big_closure' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.DGeom.exists_common_eigenvector' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.DGeom.eigenPts' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.DGeom.two_nsmul_injOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.DGeom.thetaHeisenberg_of_torsion' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.DGeom.secEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.DGeom.ajEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.DGeom.abelJacobiMathlib_of_bridge' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.DGeom.torsion_of_aj' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.DGeom.thetaHeisenbergAll_of_aj' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.DGeom.dGeomGapsAll_of_aj' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.DGeom.abelJacobiAll_of_bridge' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.DGeom.dGeomGapsAll_of_bridge' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.DGeom.deligneBound_of_bridge' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Stacks.AmpleFiniteSurjective.isAmple_of_isAmple_modulePullback' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Stacks.AmpleFiniteSurjective.isAmple_iff_isAmple_modulePullback' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.AmpleDescent.isFinite_glue_q' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.AmpleDescent.isProper_glue_B' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.AmpleDescent.isAmple_of_isAmple_pullback_glue' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.AmpleDescent.isAmple_iff_isAmple_pullback_glue' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.AmpleDescent.glueAmpleDescent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.AmpleDescent.thetaLevelDescentGood_of_levelSectionDescent'' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.AmpleDescent.thetaLevelDescentΨ_of_levelSectionDescentΨ'' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.AmpleDescent.levelDescentSplitAll_of'' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.AmpleDescent.deligneBound_of_levelDescent'' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.ThetaJ.isTwist_J' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.ThetaJ.isTwist_tensor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.ThetaJ.exists_isTwist_glue' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.ThetaJ.exists_twist' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.ThetaJ.exists_curve'' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.ThetaJ.exists_jacIso'' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.ThetaJ.comm_π_of_frobDefined' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.ThetaJ.isTwist_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.ThetaJ.exists_factor_model' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.ThetaJ.prodJacModel_of_prodIso' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.ThetaJ.frobDefined_of_central' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.ThetaJ.thetaJacobianModel_of_gaps' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.Genus2Descent.Desc2.frobQ_surjective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.Genus2Descent.Desc2.pres_frob' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.Genus2Descent.Desc2.e₂_frob_eq_top' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.Genus2Descent.Desc2.frobFF_bijective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.Genus2Descent.Desc2.genus2FrobCanonical_of_presRigid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RamanujanWeil.Arith.Deuring.Geom.G7.Genus2Descent.Desc2.genus2FrobDescent_of_presRigid_of_fixed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

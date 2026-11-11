@@ -1,5 +1,10 @@
 # A3-ord, G7: `ThetaLevelDescent` reduced to module descent and ample descent (2026-11-10)
 
+> **Update, 2026-11-10:** [ample descent](ARITH_DEURING_G7_AMPLE.md) discharges
+> `GlueAmpleDescent` using Stacks 0B5V, which is present in the pinned dependency.
+> This corrects the earlier claim that the theorem was absent.
+> `LevelSectionDescent` remains the module/section obligation.
+
 This continues `ARITH_DEURING_G7DGEOM.md` §5 (the seam `ThetaLevelDescent`), `ARITH_DEURING_G7D.md`
 §1 (the algebraic half of Mumford's descent) and `ARITH_DEURING_G7_PRINCIPAL.md` (finding 2,
 Frobenius compatibility). New files only:
@@ -125,8 +130,8 @@ Mathematically, `M = L_n` is the Mumford descent of `L ⊠ L'`:
 
 **`GlueAmpleDescent`** (named: item 4). For a G6 quotient `q : A → B` of an abelian variety over
 `k = k̄`, an invertible `M` on `B` with `q^*M` ample is ample. This is Stacks 0B5V / Hartshorne
-III Ex. 5.7(d) for the finite surjective `q`. It is not in Stacks at this pin; only the trivial
-cases of Tag 0C0T are, in `InvertibleFiniteDescent`.
+III Ex. 5.7(d) for the finite surjective `q`. It is available at this pin as `Stacks.AmpleFiniteSurjective.isAmple_iff_isAmple_modulePullback`
+and is applied in `DeuringG7AmpleDescent.lean`.
 
 **Proved reductions:**
 
